@@ -1,0 +1,421 @@
+
+STUDIO11 LUXURY INTERACTIVE DIGITAL LOOKBOOK
+Master Product Requirements Document (PRD)
+Project Name
+Studio11 Interactive Luxury Digital Lookbook & Service Builder
+PROJECT VISION
+Build a next-generation luxury salon experience that replaces traditional PDF rate cards.
+The experience should feel like a combination of:
+Apple Vision Pro website
+Tesla Configurator
+Vogue Digital Magazine
+Netflix Browsing Experience
+Luxury Hotel Booking Platform
+The customer should not feel they are viewing a rate card.
+The customer should feel they are exploring and building a premium salon experience.
+EXISTING REFERENCE MATERIALS
+Use the following as the visual design foundation:
+Male Menu
+https://canva.link/dhldsw3ulafutof⁠�
+Female Menu
+https://canva.link/otkt4fbf4oho86d⁠�
+These Canva files define:
+Typography
+Layout style
+Luxury branding
+Service categories
+Pricing structure
+Photography style
+DO NOT simply recreate the PDF.
+Transform the design into a fully interactive digital experience.
+BRAND IDENTITY
+Theme
+Luxury
+Premium
+Modern
+Futuristic
+Elegant
+Editorial
+Color Palette
+Background:
+#0B0B0F
+Secondary Background:
+#121216
+Premium Gold:
+#D4AF37
+Primary Text:
+#FFFFFF
+Secondary Text:
+rgba(255,255,255,0.7)
+Glass Surface:
+rgba(255,255,255,0.08)
+Glass Border:
+rgba(255,255,255,0.15)
+TECH STACK
+Framework:
+React + Vite
+Styling:
+Tailwind CSS
+Animation:
+Framer Motion
+Advanced Motion:
+GSAP
+State Management:
+Zustand
+Icons:
+Lucide React
+Video:
+HTML5 Video
+Deployment:
+Responsive PWA
+PERFORMANCE TARGETS
+Lighthouse Score:
+90+
+Animation FPS:
+60 FPS
+Initial Load:
+Under 2 seconds
+Mobile Optimized:
+Yes
+Tablet Optimized:
+Yes
+Desktop Optimized:
+Yes
+USER FLOW
+Launch Application
+↓
+Studio11 Intro Animation
+↓
+Choose Gender
+↓
+Browse Category
+↓
+Watch Category Video
+↓
+Select Service
+↓
+View Service Details
+↓
+Add To Session
+↓
+View Recommendations
+↓
+Continue Browsing
+↓
+Review Session
+↓
+Book Appointment
+↓
+WhatsApp Booking
+STUDIO11 OPENING ANIMATION
+When application opens:
+Show:
+STUDIO11
+Luxury Salon Experience
+Animation:
+Gold logo reveal
+Light sweep
+Soft glow
+Luxury fade
+Duration:
+2 seconds
+Then transition into main experience.
+GENDER EXPERIENCE
+Create luxury segmented control:
+MALE
+FEMALE
+KIDS
+Switching gender should:
+Change categories
+Change services
+Change pricing
+Change videos
+Change recommendations
+Smooth fade transition.
+HEADER
+Left:
+Studio11 Logo
+Center:
+Gender Toggle
+Right:
+My Session
+Example:
+My Session (3)
+Displays:
+Service Count
+Total Price
+CATEGORY EXPERIENCE
+Examples:
+CUTS
+HAIR SPA
+HAIR COLOR
+FACIAL
+BEARD
+MANICURE
+PEDICURE
+MAKEUP
+PACKAGES
+LIQUID GLASS CATEGORY TABS
+All category tabs should use:
+Apple Vision Pro style glassmorphism.
+Properties:
+Backdrop Blur: 25px
+Background:
+rgba(255,255,255,0.08)
+Border:
+1px solid rgba(255,255,255,0.15)
+Rounded Pill Shape
+Soft Glow
+Luxury Hover State
+SPOTLIGHT TAB ANIMATION
+When entering category:
+Active category triggers spotlight effect.
+Animation:
+Soft gold light sweeps across tab.
+Left to right movement.
+Tab enlarges slightly.
+Returns to normal.
+Duration:
+2 seconds
+If idle:
+Repeat every 8 seconds.
+CATEGORY STORY INTRO
+Whenever category opens:
+Display cinematic title.
+Example:
+CUTS
+Precision. Style. Personality.
+Fade out after 2 seconds.
+Then reveal service list.
+Every category should have unique tagline.
+Examples:
+CUTS
+Precision. Style. Personality.
+HAIR SPA
+Restore. Nourish. Revive.
+COLOR
+Bold. Vibrant. Beautiful.
+FACIAL
+Glow Beyond Expectations.
+VIDEO EXPERIENCE
+Replace static images completely.
+Each category has its own video.
+Example:
+cuts.mp4
+hairspa.mp4
+color.mp4
+facial.mp4
+beard.mp4
+makeup.mp4
+VIDEO SPECIFICATIONS
+Use:
+HTML5 Video
+Attributes:
+autoplay
+muted
+loop
+playsinline
+object-fit: cover
+Owner will manually upload videos.
+Developer should create placeholders:
+/videos/cuts.mp4
+/videos/hairspa.mp4
+/videos/color.mp4
+etc.
+VIDEO TRANSITIONS
+When category changes:
+Current video fades out.
+New video fades in.
+Duration:
+600ms
+No hard cuts.
+SERVICE LIST EXPERIENCE
+Initially show:
+SERVICE NAME ONLY
+Examples:
+Kids Hair Cut
+Basic Hair Cut
+Advanced Hair Cut
+No price visible.
+No description visible.
+No duration visible.
+Purpose:
+Create curiosity.
+SERVICE CARD INTERACTION
+When service tapped:
+Selected card:
+Gold glow
+Gold border
+Scale 102%
+Other cards:
+Opacity 50%
+SERVICE DETAIL DRAWER
+Open bottom drawer.
+Height:
+35% screen
+Animation:
+Slide Up
+Glassmorphism Design
+Backdrop Blur:
+25px
+DRAWER CONTENT
+Show:
+Service Name
+Description
+Benefits
+Duration
+Price
+Add To Session Button
+Example:
+Basic Hair Cut
+Includes:
+Shampoo
+Conditioning
+Precision Cut
+Blow Dry
+Duration:
+45 Minutes
+Price:
+₹400
+Button:
+ADD TO SESSION
+CINEMATIC SERVICE SHOWCASE
+Alternative Mode:
+When service selected:
+Expand service into full-screen showcase.
+Display:
+Video Background
+Service Name
+Description
+Price
+Duration
+Add To Session
+Netflix-style presentation.
+ADD TO SESSION ANIMATION
+When user taps:
+ADD TO SESSION
+Show:
+Gold particle burst
+Success checkmark
+Button animation
+Then transition.
+FULL SCREEN VIDEO EXPANSION
+After adding service:
+Video expands from frame.
+Covers entire screen.
+Duration:
+800ms
+Add dark overlay.
+Maintain readability.
+DECISION MODAL
+Show:
+✓ Service Added
+Basic Hair Cut added to your session.
+Options:
+ADD MORE SERVICES
+CONTINUE
+SMART RECOMMENDATION ENGINE
+After adding service:
+Show recommendations.
+Example:
+Frequently paired with:
+Hair Spa
+Beard Styling
+Hair Wash
+Add Button for each.
+MY SESSION DRAWER
+Slide from right side.
+Do not navigate away.
+Display:
+Selected Services
+Prices
+Duration
+Total
+Example:
+Basic Hair Cut ₹400
+Hair Spa ₹900
+Beard Styling ₹250
+Total Duration:
+105 Minutes
+Total Price:
+₹1550
+SESSION VALUE DISPLAY
+Header should always show:
+My Session
+3 Services
+₹1550
+Live updating.
+PROGRESS INDICATOR
+Bottom of screen.
+Step 1
+DISCOVER
+Step 2
+BUILD SESSION
+Step 3
+REVIEW
+Step 4
+BOOK
+Animated progress state.
+GESTURE CONTROLS
+Swipe Left:
+Next Category
+Swipe Right:
+Previous Category
+Swipe Up:
+Expand Drawer
+Swipe Down:
+Close Drawer
+Touch Friendly.
+MICRO INTERACTIONS
+Glass Ripple
+Elastic Motion
+Luxury Fade
+Gold Glow
+Particle Effects
+Smooth Transitions
+No abrupt movements.
+WHATSAPP BOOKING
+Generate booking summary automatically.
+Example:
+Hello Studio11,
+I would like to book:
+Basic Hair Cut
+Hair Spa
+Beard Styling
+Total Amount: ₹1550
+Preferred Date:
+Preferred Time:
+Please confirm availability.
+Open WhatsApp with prefilled message.
+FINAL BOOKING SCREEN
+Display:
+STUDIO11
+Your Session Is Ready
+3 Services
+105 Minutes
+₹1550
+Buttons:
+BOOK APPOINTMENT
+WHATSAPP BOOKING
+Continue Browsing
+Background:
+Slow cinematic luxury video.
+FUTURE READY ARCHITECTURE
+System should support future additions:
+Online Payments
+Membership Plans
+Loyalty Rewards
+AI Recommendations
+Package Builder
+Customer Profiles
+Gift Cards
+QR Access
+Digital Consultation Forms
+Before/After Gallery
+Subscription Plans
+Multi-Branch Support
+IMPORTANT INSTRUCTION
+Do NOT build a digital PDF viewer.
+Do NOT build a traditional salon rate card.
+Build a premium luxury interactive experience where customers discover services, watch cinematic videos, create a personalized salon session, receive intelligent recommendations, and book seamlessly.
+The final experience should feel like an Apple product showcase combined with a luxury fashion magazine and a modern booking platform while maintaining Studio11's black-and-gold premium identity.
