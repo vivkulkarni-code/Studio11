@@ -8,7 +8,7 @@ import { getSubCategories } from '@/data/categories';
 import { getRecommendations } from '@/data/recommendations';
 import { useAccentColor } from '@/hooks/useAccentColor';
 import { useSwipe } from '@/hooks/useSwipe';
-import logoPath from '@assets/logo_1781636770613.jpg';
+import logoPath from '@assets/logo_transparent.png';
 
 export default function MainScreen() {
   const { gender, activeCategory, setActiveCategory, activeBottomTab } = useSessionStore();
@@ -61,9 +61,11 @@ function Header() {
   return (
     <div className="fixed top-0 left-0 right-0 h-[64px] bg-black/60 backdrop-blur-2xl border-b border-white/10 z-50 flex items-center justify-between px-4 md:px-6">
       <div className="flex items-center gap-2 shrink-0">
-        <div className="bg-white rounded-lg p-1 shadow-sm">
-          <img src={logoPath} alt="Studio11" className="h-8 w-auto object-contain rounded" />
-        </div>
+        <img
+          src={logoPath}
+          alt="Studio11"
+          className="h-10 w-auto object-contain drop-shadow-[0_0_12px_rgba(212,175,55,0.4)]"
+        />
         <span
           className="text-white tracking-[0.35em] uppercase text-base font-semibold hidden sm:block"
           style={{ fontFamily: "'Bodoni Moda', serif" }}
@@ -119,13 +121,44 @@ function Header() {
   );
 }
 
-function CategoryTabs({ cats }: { cats: string[] }) {
-  const { activeCategory, setActiveCategory, setActiveSubCategory } = useSessionStore();
-  const { accent, accentMuted } = useAccentColor();
+function Sparkle({ color, count = 6 }: { color: string; count?: number }) {
+  const POSITIONS = [
+    { left: '15%', top: '20%', dx: '-8px', dy: '-12px', delay: 0 },
+    { left: '80%', top: '15%', dx: '8px', dy: '-14px', delay: 0.3 },
+    { left: '50%', top: '80%', dx: '0px', dy: '12px', delay: 0.6 },
+    { left: '90%', top: '60%', dx: '10px', dy: '-8px', delay: 0.1 },
+    { left: '10%', top: '70%', dx: '-10px', dy: '8px', delay: 0.5 },
+    { left: '40%', top: '10%', dx: '4px', dy: '-16px', delay: 0.9 },
+  ].slice(0, count);
 
-  const handleCategoryClick = (cat: string) => {
-    setActiveCategory(cat as any);
-  };
+  return (
+    <>
+      {POSITIONS.map((p, i) => (
+        <span
+          key={i}
+          style={{
+            position: 'absolute',
+            left: p.left,
+            top: p.top,
+            width: '4px',
+            height: '4px',
+            borderRadius: '50%',
+            background: color,
+            boxShadow: `0 0 4px ${color}, 0 0 8px ${color}`,
+            pointerEvents: 'none',
+            animation: `glitter-drift 2.2s ease-out ${p.delay}s infinite`,
+            ['--dx' as any]: p.dx,
+            ['--dy' as any]: p.dy,
+          }}
+        />
+      ))}
+    </>
+  );
+}
+
+function CategoryTabs({ cats }: { cats: string[] }) {
+  const { activeCategory, setActiveCategory } = useSessionStore();
+  const { accent } = useAccentColor();
 
   return (
     <div className="pt-[64px] flex-none border-b border-white/10 bg-black/40 backdrop-blur-md relative z-40">
@@ -136,19 +169,24 @@ function CategoryTabs({ cats }: { cats: string[] }) {
             <button
               key={cat}
               data-testid={`tab-category-${cat}`}
-              onClick={() => handleCategoryClick(cat)}
-              className="shrink-0 rounded-full px-4 py-2 text-[9px] uppercase tracking-[0.18em] transition-all duration-300 relative overflow-hidden"
+              onClick={() => setActiveCategory(cat as any)}
+              className={`shrink-0 rounded-full px-4 py-2 text-[9px] uppercase tracking-[0.18em] transition-all duration-300 relative overflow-hidden ${isActive ? 'liquid-glass-accent' : 'liquid-glass'}`}
               style={{
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
-                background: isActive ? accent : 'rgba(255,255,255,0.05)',
-                color: isActive ? '#0B0B0F' : 'rgba(255,255,255,0.65)',
+                background: isActive
+                  ? `linear-gradient(135deg, ${accent}55 0%, ${accent}22 100%)`
+                  : undefined,
+                color: isActive ? accent : 'rgba(255,255,255,0.6)',
                 fontWeight: isActive ? 700 : 400,
-                border: isActive ? 'none' : '1px solid rgba(255,255,255,0.12)',
-                transform: isActive ? 'scale(1.05)' : 'scale(1)',
-                boxShadow: isActive ? `0 0 14px ${accent}44` : 'none',
+                borderColor: isActive ? `${accent}50` : 'rgba(255,255,255,0.15)',
+                transform: isActive ? 'scale(1.06)' : 'scale(1)',
+                boxShadow: isActive
+                  ? `0 0 16px ${accent}33, inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -1px 0 rgba(0,0,0,0.1)`
+                  : 'inset 0 1px 0 rgba(255,255,255,0.12), 0 4px 16px rgba(0,0,0,0.2)',
               }}
             >
-              {cat}
+              {isActive && <Sparkle color={accent} count={5} />}
+              <span className="relative z-10">{cat}</span>
             </button>
           );
         })}
@@ -181,16 +219,22 @@ function SubCategoryTabs() {
               key={sub}
               data-testid={`tab-subcategory-${sub}`}
               onClick={() => setActiveSubCategory(sub)}
-              className="shrink-0 rounded-full px-4 py-1.5 text-[9px] uppercase tracking-[0.15em] transition-all duration-200"
+              className={`shrink-0 rounded-full px-4 py-1.5 text-[9px] uppercase tracking-[0.15em] transition-all duration-200 relative overflow-hidden ${isActive ? 'liquid-glass-accent' : 'liquid-glass'}`}
               style={{
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
-                background: isActive ? accentMuted : 'transparent',
-                color: isActive ? accent : 'rgba(255,255,255,0.45)',
+                background: isActive
+                  ? `linear-gradient(135deg, ${accent}40 0%, ${accent}18 100%)`
+                  : undefined,
+                color: isActive ? accent : 'rgba(255,255,255,0.42)',
                 fontWeight: isActive ? 600 : 400,
-                border: `1px solid ${isActive ? accentBorder : 'rgba(255,255,255,0.08)'}`,
+                borderColor: isActive ? `${accent}45` : 'rgba(255,255,255,0.10)',
+                boxShadow: isActive
+                  ? `0 0 12px ${accent}28, inset 0 1px 0 rgba(255,255,255,0.25)`
+                  : 'inset 0 1px 0 rgba(255,255,255,0.08)',
               }}
             >
-              {sub}
+              {isActive && <Sparkle color={accent} count={4} />}
+              <span className="relative z-10">{sub}</span>
             </button>
           );
         })}
@@ -287,7 +331,6 @@ function ServiceList() {
         {services.map((service, i) => {
           const isSelected = selectedService?.id === service.id;
           const hasSelection = !!selectedService;
-          const displayPrice = service.price === 0 ? 'Consult Us' : `₹${service.price.toLocaleString('en-IN')}`;
           return (
             <motion.div
               key={service.id}
@@ -309,27 +352,17 @@ function ServiceList() {
               <div className="absolute left-0 top-0 bottom-0 w-[2px]" style={{ background: isSelected ? accent : `${accent}30` }} />
               <div className="flex flex-col ml-4">
                 <h3
-                  className="text-base text-white uppercase tracking-wide mb-0.5"
+                  className="text-base text-white uppercase tracking-wide"
                   style={{ fontFamily: "'Bodoni Moda', serif" }}
                 >
                   {service.name}
                 </h3>
-                <div className="flex items-center gap-2">
-                  <span
-                    className="text-sm font-medium"
-                    style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: service.price === 0 ? accent : 'rgba(255,255,255,0.5)' }}
-                  >
-                    {displayPrice}
-                  </span>
-                  {service.price > 0 && (
-                    <>
-                      <span className="text-white/20 text-xs">•</span>
-                      <span className="text-white/35 text-xs" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                        {service.duration} MIN
-                      </span>
-                    </>
-                  )}
-                </div>
+                <p
+                  className="text-[10px] mt-0.5 uppercase tracking-[0.12em]"
+                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: `${accent}60` }}
+                >
+                  Tap to explore
+                </p>
               </div>
               <ChevronRight size={18} className="shrink-0" style={{ color: isSelected ? accent : 'rgba(255,255,255,0.25)' }} />
             </motion.div>
@@ -525,36 +558,35 @@ function ServiceDrawer() {
               </div>
 
               {!alreadyAdded ? (
-                <div className="relative">
-                  <button
-                    data-testid="button-add-to-session"
-                    onClick={handleAdd}
-                    className="w-full relative overflow-hidden font-semibold uppercase tracking-widest py-4 rounded-2xl transition-transform active:scale-[0.98]"
-                    style={{
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      background: `linear-gradient(135deg, ${accent}, ${accent}cc)`,
-                      color: '#0B0B0F',
-                      boxShadow: accentGlow,
-                    }}
-                  >
-                    {adding ? (
-                      <motion.div
-                        initial={{ scale: 0.5, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        className="flex items-center justify-center gap-2"
-                      >
-                        <Check size={20} />
-                        <span>Added</span>
-                      </motion.div>
-                    ) : (
-                      'Add to Session'
-                    )}
-                  </button>
-                </div>
+                <button
+                  data-testid="button-add-to-session"
+                  onClick={handleAdd}
+                  className="liquid-glass-accent w-full relative font-semibold uppercase tracking-widest py-4 rounded-2xl transition-transform active:scale-[0.98]"
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    background: `linear-gradient(135deg, ${accent}88 0%, ${accent}44 100%)`,
+                    color: '#0B0B0F',
+                    borderColor: `${accent}60`,
+                    boxShadow: `${accentGlow}, inset 0 1px 0 rgba(255,255,255,0.35)`,
+                  }}
+                >
+                  {adding ? (
+                    <motion.div
+                      initial={{ scale: 0.5, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      className="flex items-center justify-center gap-2"
+                    >
+                      <Check size={20} />
+                      <span>Added</span>
+                    </motion.div>
+                  ) : (
+                    'Add to Session'
+                  )}
+                </button>
               ) : (
                 <div
-                  className="w-full py-4 rounded-2xl flex items-center justify-center gap-2 text-sm uppercase tracking-widest"
-                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", border: `1px solid ${accent}40`, color: `${accent}80` }}
+                  className="liquid-glass w-full py-4 rounded-2xl flex items-center justify-center gap-2 text-sm uppercase tracking-widest"
+                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", borderColor: `${accent}30`, color: `${accent}70` }}
                 >
                   <Check size={16} />
                   <span>In Session</span>
@@ -651,16 +683,22 @@ function DecisionModal() {
               <button
                 data-testid="button-add-more"
                 onClick={handleAddMore}
-                className="w-full border text-white text-xs uppercase tracking-widest py-4 rounded-xl hover:bg-white/5 transition-colors"
-                style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", borderColor: 'rgba(255,255,255,0.18)' }}
+                className="liquid-glass w-full text-white text-xs uppercase tracking-widest py-4 rounded-xl transition-all hover:scale-[1.01]"
+                style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", borderColor: 'rgba(255,255,255,0.18)', color: 'rgba(255,255,255,0.8)' }}
               >
                 Add More Services
               </button>
               <button
                 data-testid="button-review-session"
                 onClick={handleReview}
-                className="w-full font-semibold text-xs uppercase tracking-widest py-4 rounded-xl hover:scale-[1.02] transition-transform"
-                style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", background: accent, color: '#0B0B0F', boxShadow: accentGlow }}
+                className="liquid-glass-accent w-full font-semibold text-xs uppercase tracking-widest py-4 rounded-xl transition-all hover:scale-[1.02]"
+                style={{
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  background: `linear-gradient(135deg, ${accent}88 0%, ${accent}44 100%)`,
+                  color: '#0B0B0F',
+                  borderColor: `${accent}60`,
+                  boxShadow: `${accentGlow}, inset 0 1px 0 rgba(255,255,255,0.35)`,
+                }}
               >
                 Review Session
               </button>
@@ -765,16 +803,22 @@ function SessionDrawer() {
                 <button
                   data-testid="button-book-appointment"
                   onClick={handleWhatsApp}
-                  className="w-full font-semibold text-xs uppercase tracking-widest py-4 rounded-xl hover:scale-[1.02] transition-transform mb-3"
-                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", background: accent, color: '#0B0B0F', boxShadow: accentGlow }}
+                  className="liquid-glass-accent w-full font-semibold text-xs uppercase tracking-widest py-4 rounded-xl hover:scale-[1.02] transition-transform mb-3"
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    background: `linear-gradient(135deg, ${accent}99 0%, ${accent}55 100%)`,
+                    color: '#0B0B0F',
+                    borderColor: `${accent}65`,
+                    boxShadow: `${accentGlow}, inset 0 1px 0 rgba(255,255,255,0.4)`,
+                  }}
                 >
                   Book Appointment
                 </button>
                 <button
                   data-testid="button-whatsapp"
                   onClick={handleWhatsApp}
-                  className="w-full font-semibold text-xs uppercase tracking-widest py-4 rounded-xl hover:bg-white/5 transition-colors"
-                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", border: `1px solid ${accent}50`, color: accent }}
+                  className="liquid-glass w-full font-semibold text-xs uppercase tracking-widest py-4 rounded-xl transition-all hover:scale-[1.01]"
+                  style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", borderColor: `${accent}40`, color: accent }}
                 >
                   WhatsApp Booking
                 </button>

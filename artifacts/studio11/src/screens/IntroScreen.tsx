@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useSessionStore } from '@/store/sessionStore';
-import logoPath from '@assets/logo_1781636770613.jpg';
+import logoPath from '@assets/logo_transparent.png';
 
 export default function IntroScreen() {
   const setAppScreen = useSessionStore(s => s.setAppScreen);
@@ -24,7 +24,7 @@ export default function IntroScreen() {
         transition={{ duration: 1.1, ease: 'easeOut' }}
       >
         <motion.div
-          className="bg-white rounded-xl p-2 shadow-[0_0_40px_rgba(212,175,55,0.25)] mb-5"
+          className="mb-5 drop-shadow-[0_0_32px_rgba(212,175,55,0.35)]"
           initial={{ scale: 0.85, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.9, delay: 0.1, ease: 'easeOut' }}
@@ -32,7 +32,7 @@ export default function IntroScreen() {
           <img
             src={logoPath}
             alt="Studio11 Logo"
-            className="h-20 w-auto object-contain rounded-lg"
+            className="h-24 w-auto object-contain"
           />
         </motion.div>
 
