@@ -1,549 +1,303 @@
 import { Service, Gender, CategoryName } from '@/store/sessionStore';
 
 export const maleServices: Service[] = [
-  {
-    id: 'male-cuts-0',
-    name: 'Basic Hair Cut',
-    price: 400,
-    duration: 30,
-    description: 'A precision cut tailored to your facial structure, finished with a blow-dry and style consultation.',
-    benefits: ['Shampoo', 'Precision Cut', 'Blow Dry', 'Style Consultation'],
-    category: 'CUTS',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-cuts-1',
-    name: 'Advanced Hair Cut',
-    price: 600,
-    duration: 45,
-    description: 'Our master stylists craft your signature look with expert scissor technique and personalized styling.',
-    benefits: ['Shampoo', 'Deep Conditioning', 'Precision Cut', 'Styling', 'Finish Spray'],
-    category: 'CUTS',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-cuts-2',
-    name: 'Fade Cut',
-    price: 500,
-    duration: 40,
-    description: 'A sharp, clean fade blended to perfection — from skin to scissor in one seamless gradient.',
-    benefits: ['Shampoo', 'Fade Blend', 'Line Up', 'Finish'],
-    category: 'CUTS',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-cuts-3',
-    name: 'Kids Cut',
-    price: 250,
-    duration: 20,
-    description: 'A gentle, playful cut that keeps little ones comfortable and looking their best.',
-    benefits: ['Gentle Shampoo', 'Style Cut', 'Blow Dry'],
-    category: 'CUTS',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-hair-spa-0',
-    name: 'Basic Hair Spa',
-    price: 900,
-    duration: 60,
-    description: 'A nourishing treatment that restores shine and softness, returning vitality to tired strands.',
-    benefits: ['Cleansing Shampoo', 'Spa Mask', 'Scalp Massage', 'Blow Dry'],
-    category: 'HAIR SPA',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-hair-spa-1',
-    name: 'Keratin Treatment',
-    price: 3500,
-    duration: 120,
-    description: 'Banish frizz and unlock silky-smooth, manageable hair for up to 4 months.',
-    benefits: ['Clarifying Wash', 'Keratin Application', 'Heat Sealing', 'Blow Out'],
-    category: 'HAIR SPA',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-hair-spa-2',
-    name: 'Deep Conditioning',
-    price: 1200,
-    duration: 75,
-    description: 'An intensive moisture surge that repairs damage and leaves hair irresistibly soft.',
-    benefits: ['Hydrating Shampoo', 'Conditioning Mask', 'Steam Treatment', 'Blow Dry'],
-    category: 'HAIR SPA',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-hair-color-0',
-    name: 'Global Color',
-    price: 2500,
-    duration: 120,
-    description: 'Full-head color crafted for maximum vibrancy and fade-resistant longevity.',
-    benefits: ['Color Consultation', 'Full Application', 'Processing', 'Toning', 'Blow Dry'],
-    category: 'HAIR COLOR',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-hair-color-1',
-    name: 'Highlights',
-    price: 3500,
-    duration: 150,
-    description: 'Sun-kissed dimension woven through your hair for a multi-tonal, editorial finish.',
-    benefits: ['Consultation', 'Foil Highlights', 'Toning', 'Deep Condition', 'Blow Dry'],
-    category: 'HAIR COLOR',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-hair-color-2',
-    name: 'Root Touch Up',
-    price: 1500,
-    duration: 60,
-    description: 'Seamlessly refresh your roots for a flawless, grown-in look.',
-    benefits: ['Root Application', 'Processing', 'Toning', 'Blow Dry'],
-    category: 'HAIR COLOR',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-beard-0',
-    name: 'Beard Trim',
-    price: 200,
-    duration: 15,
-    description: 'A clean, precise shape-up that defines your beard\'s natural silhouette.',
-    benefits: ['Beard Wash', 'Precision Trim', 'Line Up'],
-    category: 'BEARD',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-beard-1',
-    name: 'Beard Styling',
-    price: 350,
-    duration: 30,
-    description: 'Expert sculpting to craft your ideal beard shape, finished with premium beard balm.',
-    benefits: ['Beard Wash', 'Sculpting', 'Line Up', 'Beard Balm'],
-    category: 'BEARD',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-beard-2',
-    name: 'Beard Color',
-    price: 600,
-    duration: 45,
-    description: 'Natural-looking color applied to your beard for a fresh, youthful appearance.',
-    benefits: ['Color Application', 'Processing', 'Conditioning', 'Style Finish'],
-    category: 'BEARD',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-facial-0',
-    name: 'Basic Facial',
-    price: 800,
-    duration: 60,
-    description: 'A deep cleanse and targeted treatment that clears, brightens and refreshes your complexion.',
-    benefits: ['Double Cleanse', 'Exfoliation', 'Steam', 'Extraction', 'Mask', 'Moisturize'],
-    category: 'FACIAL',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-facial-1',
-    name: 'Gold Facial',
-    price: 1500,
-    duration: 75,
-    description: 'A luxurious gold-infused treatment that illuminates and firms for a radiant, glowing finish.',
-    benefits: ['Gold Cleanse', 'Peel', 'Gold Serum', '24K Mask', 'Collagen Moisturizer'],
-    category: 'FACIAL',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-facial-2',
-    name: 'Anti-Aging Facial',
-    price: 2000,
-    duration: 90,
-    description: 'A targeted anti-aging protocol that visibly reduces fine lines and restores youthful firmness.',
-    benefits: ['Deep Cleanse', 'Retinol Peel', 'Collagen Infusion', 'Firming Mask', 'SPF Finish'],
-    category: 'FACIAL',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-manicure-0',
-    name: 'Basic Manicure',
-    price: 400,
-    duration: 40,
-    description: 'A thorough hand treatment with nail shaping, cuticle care, and a polished finish.',
-    benefits: ['Soak', 'Cuticle Care', 'Shape', 'Buff', 'Polish'],
-    category: 'MANICURE',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-manicure-1',
-    name: 'Gel Manicure',
-    price: 700,
-    duration: 60,
-    description: 'Long-lasting gel polish that delivers chip-free color for up to 3 weeks.',
-    benefits: ['Prep', 'Cuticle Care', 'Shape', 'Gel Application', 'Cure', 'Gloss'],
-    category: 'MANICURE',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-pedicure-0',
-    name: 'Basic Pedicure',
-    price: 500,
-    duration: 50,
-    description: 'Revive tired feet with a soothing soak, thorough exfoliation and a smooth finish.',
-    benefits: ['Foot Soak', 'Exfoliation', 'Cuticle Care', 'Shape', 'Massage', 'Polish'],
-    category: 'PEDICURE',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-pedicure-1',
-    name: 'Spa Pedicure',
-    price: 900,
-    duration: 75,
-    description: 'A full luxury foot ritual with mask, massage and long-lasting polish.',
-    benefits: ['Aromatic Soak', 'Scrub', 'Mask', 'Extended Massage', 'Shape', 'Gel Polish'],
-    category: 'PEDICURE',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-packages-0',
-    name: 'Hair + Beard',
-    price: 900,
-    duration: 75,
-    description: 'The complete gentleman\'s grooming session — a precision cut paired with expert beard shaping.',
-    benefits: ['Hair Cut', 'Shampoo', 'Beard Trim', 'Line Up', 'Style Finish'],
-    category: 'PACKAGES',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-packages-1',
-    name: 'Complete Grooming',
-    price: 2000,
-    duration: 150,
-    description: 'Our signature all-in-one package for the modern man who settles for nothing less.',
-    benefits: ['Hair Cut', 'Hair Spa', 'Beard Styling', 'Basic Facial', 'Style Finish'],
-    category: 'PACKAGES',
-    gender: 'MALE'
-  },
-  {
-    id: 'male-packages-2',
-    name: 'Spa Day Package',
-    price: 4500,
-    duration: 240,
-    description: 'A full day of indulgence — hair, skin, and hands treated to Studio11\'s finest.',
-    benefits: ['Advanced Cut', 'Keratin Treatment', 'Gold Facial', 'Gel Manicure', 'Spa Pedicure'],
-    category: 'PACKAGES',
-    gender: 'MALE'
-  }
+  // HAIR STYLING — Cuts
+  { id: 'm-hs-c-0', name: 'Kids Hair Cut (Below 12 Years Old)', price: 250, duration: 20, description: 'A gentle, precise cut for young ones.', benefits: ['Gentle Shampoo', 'Precision Cut', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Cuts', gender: 'MALE' },
+  { id: 'm-hs-c-1', name: 'Basic Hair Cut', price: 400, duration: 35, description: 'A precision cut with shampoo, conditioning and a smooth straight blow dry.', benefits: ['Shampoo', 'Conditioning', 'Precision Cut', 'Straight Blow Dry'], category: 'HAIR STYLING', subCategory: 'Cuts', gender: 'MALE' },
+  { id: 'm-hs-c-2', name: 'Advanced Hair Cut', price: 600, duration: 50, description: 'A master-stylist cut with shampoo, conditioning and personalised blow dry setting.', benefits: ['Shampoo', 'Conditioning', 'Master Cut', 'Blow Dry Setting'], category: 'HAIR STYLING', subCategory: 'Cuts', gender: 'MALE' },
+  // HAIR STYLING — Colors
+  { id: 'm-hs-col-0', name: 'Root Touch Up - 1 Inch', price: 1000, duration: 45, description: 'Seamlessly refresh 1-inch roots for a polished finish.', benefits: ['Root Application', 'Processing', 'Toning'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'MALE' },
+  { id: 'm-hs-col-1', name: 'Root Touch Up - 2 Inches', price: 1200, duration: 60, description: 'Full 2-inch root refresh, perfectly blended.', benefits: ['Root Application', 'Processing', 'Toning', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'MALE' },
+  { id: 'm-hs-col-2', name: 'Root Touch Up (Ammonia Free) - 1 Inch', price: 1200, duration: 45, description: 'Gentle ammonia-free formula for sensitive scalps.', benefits: ['Ammonia-Free Color', 'Processing', 'Toning'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'MALE' },
+  { id: 'm-hs-col-3', name: 'Root Touch Up (Ammonia Free) - 2 Inches', price: 1500, duration: 60, description: '2-inch ammonia-free root coverage, kind to scalp and hair.', benefits: ['Ammonia-Free Color', 'Processing', 'Toning', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'MALE' },
+  { id: 'm-hs-col-4', name: 'Global Colour - Short', price: 1200, duration: 75, description: 'Full-head vibrant colour for short hair with expert application.', benefits: ['Consultation', 'Full Application', 'Processing', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'MALE' },
+  { id: 'm-hs-col-5', name: 'Global Colour - Medium', price: 1500, duration: 90, description: 'Rich full-head colour for medium hair with premium formulas.', benefits: ['Consultation', 'Full Application', 'Processing', 'Toning', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'MALE' },
+  { id: 'm-hs-col-6', name: 'Global Colour (Ammonia Free) - Short', price: 1400, duration: 75, description: 'Ammonia-free full-head colour for short hair.', benefits: ['Ammonia-Free Color', 'Processing', 'Toning', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'MALE' },
+  { id: 'm-hs-col-7', name: 'Global Colour (Ammonia Free) - Medium', price: 1800, duration: 90, description: 'Ammonia-free full-head colour for medium hair.', benefits: ['Ammonia-Free Color', 'Processing', 'Toning', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'MALE' },
+  { id: 'm-hs-col-8', name: 'Global Highlights - Short', price: 1800, duration: 90, description: 'Multi-tonal highlights woven through short hair for sun-kissed dimension.', benefits: ['Consultation', 'Foil Application', 'Processing', 'Toning', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'MALE' },
+  { id: 'm-hs-col-9', name: 'Global Highlights - Medium', price: 2400, duration: 120, description: 'Full-head luminous highlights on medium hair for editorial depth.', benefits: ['Consultation', 'Foil Application', 'Processing', 'Toning', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'MALE' },
+  { id: 'm-hs-col-10', name: 'Partial/Crown Highlights - Short', price: 1200, duration: 60, description: 'Targeted crown highlights to brighten short hair.', benefits: ['Consultation', 'Crown Application', 'Processing', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'MALE' },
+  { id: 'm-hs-col-11', name: 'Partial/Crown Highlights - Medium', price: 1550, duration: 75, description: 'Targeted crown highlights on medium hair for natural lift.', benefits: ['Consultation', 'Crown Application', 'Processing', 'Toning', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'MALE' },
+  { id: 'm-hs-col-12', name: 'Classic Fashion Streak (Per Streak)', price: 200, duration: 20, description: 'A bold, bespoke fashion streak for individual expression.', benefits: ['Streak Application', 'Processing'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'MALE' },
+  { id: 'm-hs-col-13', name: 'Advanced Fashion Streak (Includes Prelightening)', price: 400, duration: 30, description: 'Vivid fashion streak with prelightening for maximum vibrancy.', benefits: ['Prelightening', 'Streak Application', 'Processing'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'MALE' },
+  { id: 'm-hs-col-14', name: 'Mustache Colour', price: 180, duration: 15, description: 'Natural-looking colour for a refreshed mustache.', benefits: ['Application', 'Processing', 'Finish'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'MALE' },
+  { id: 'm-hs-col-15', name: 'Beard Colour', price: 350, duration: 20, description: 'Expert beard colouring for a youthful, refined look.', benefits: ['Application', 'Processing', 'Conditioning', 'Finish'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'MALE' },
+  { id: 'm-hs-col-16', name: 'Eyebrows Colour', price: 150, duration: 15, description: 'Subtle eyebrow tinting to define and frame your look.', benefits: ['Tinting', 'Processing', 'Shaping'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'MALE' },
+  { id: 'm-hs-col-17', name: 'Side Locks Colour', price: 150, duration: 15, description: 'Discreet colour for side locks — seamlessly blended.', benefits: ['Application', 'Processing', 'Blend'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'MALE' },
+  // HAIR TREATMENTS & SPAS — Texture
+  { id: 'm-ht-tx-0', name: 'Straightening/Smoothening - Short', price: 2500, duration: 90, description: 'Frizz-banishing smoothening treatment for short hair — silky and manageable.', benefits: ['Clarifying Wash', 'Treatment Application', 'Heat Sealing', 'Blow Out'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Texture', gender: 'MALE' },
+  { id: 'm-ht-tx-1', name: 'Straightening/Smoothening - Medium', price: 3000, duration: 120, description: 'Salon-smooth straightening for medium hair lasting months.', benefits: ['Clarifying Wash', 'Treatment Application', 'Heat Sealing', 'Blow Out'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Texture', gender: 'MALE' },
+  { id: 'm-ht-tx-2', name: 'Rebonding - Short', price: 3000, duration: 120, description: 'Precision rebonding for short hair — perfectly straight with natural movement.', benefits: ['Clarifying Wash', 'Rebonding Application', 'Heat Sealing', 'Neutralizing', 'Blow Out'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Texture', gender: 'MALE' },
+  { id: 'm-ht-tx-3', name: 'Rebonding - Medium', price: 3500, duration: 150, description: 'Full rebonding for medium hair with flawless straight results.', benefits: ['Clarifying Wash', 'Rebonding Application', 'Heat Sealing', 'Neutralizing', 'Blow Out'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Texture', gender: 'MALE' },
+  { id: 'm-ht-tx-4', name: 'Keratin - Short', price: 3000, duration: 90, description: 'Keratin treatment for short hair — frizz-free for up to 4 months.', benefits: ['Clarifying Wash', 'Keratin Application', 'Heat Sealing', 'Blow Out'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Texture', gender: 'MALE' },
+  { id: 'm-ht-tx-5', name: 'Keratin - Medium', price: 4500, duration: 120, description: 'Keratin smoothening for medium hair — silky, manageable, frizz-free.', benefits: ['Clarifying Wash', 'Keratin Application', 'Heat Sealing', 'Blow Out'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Texture', gender: 'MALE' },
+  { id: 'm-ht-tx-6', name: 'Botox - Short', price: 4000, duration: 120, description: 'Hair Botox for short hair — intense nourishment, softness and shine.', benefits: ['Clarifying Wash', 'Botox Application', 'Heat Sealing', 'Blow Out'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Texture', gender: 'MALE' },
+  { id: 'm-ht-tx-7', name: 'Botox - Medium', price: 5500, duration: 150, description: 'Hair Botox for medium hair — deep repair, radiant smooth finish.', benefits: ['Clarifying Wash', 'Botox Application', 'Heat Sealing', 'Blow Out'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Texture', gender: 'MALE' },
+  { id: 'm-ht-tx-8', name: 'Nanoplastia', price: 0, duration: 180, description: 'Ultra-premium nano-keratin treatment — consult for bespoke pricing.', benefits: ['Consultation', 'Nano Application', 'Heat Sealing', 'Expert Finish'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Texture', gender: 'MALE' },
+  // HAIR TREATMENTS & SPAS — Hair Spas
+  { id: 'm-ht-hs-0', name: 'Repairing Hair Spa - Short', price: 1200, duration: 60, description: 'Intensive repair spa for extremely damaged short hair.', benefits: ['Cleansing Shampoo', 'Repairing Mask', 'Scalp Massage', 'Blow Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Hair Spas', gender: 'MALE' },
+  { id: 'm-ht-hs-1', name: 'Repairing Hair Spa - Medium', price: 1400, duration: 75, description: 'Intensive repair spa for extremely damaged medium hair.', benefits: ['Cleansing Shampoo', 'Repairing Mask', 'Scalp Massage', 'Blow Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Hair Spas', gender: 'MALE' },
+  { id: 'm-ht-hs-2', name: 'Smoothening Hair Spa - Short', price: 1200, duration: 60, description: 'Taming spa for dry and frizzy short hair.', benefits: ['Smoothening Shampoo', 'Frizz Mask', 'Scalp Massage', 'Blow Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Hair Spas', gender: 'MALE' },
+  { id: 'm-ht-hs-3', name: 'Smoothening Hair Spa - Medium', price: 1400, duration: 75, description: 'Taming spa for dry and frizzy medium hair.', benefits: ['Smoothening Shampoo', 'Frizz Mask', 'Scalp Massage', 'Blow Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Hair Spas', gender: 'MALE' },
+  { id: 'm-ht-hs-4', name: 'Vitalising Hair Spa - Short', price: 1200, duration: 60, description: 'Revitalising spa for chemically treated short hair.', benefits: ['Vitalising Shampoo', 'Recovery Mask', 'Scalp Massage', 'Blow Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Hair Spas', gender: 'MALE' },
+  { id: 'm-ht-hs-5', name: 'Vitalising Hair Spa - Medium', price: 1400, duration: 75, description: 'Revitalising spa for chemically treated medium hair.', benefits: ['Vitalising Shampoo', 'Recovery Mask', 'Scalp Massage', 'Blow Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Hair Spas', gender: 'MALE' },
+  { id: 'm-ht-hs-6', name: 'Nourishing Hair Spa - Short', price: 1200, duration: 60, description: 'Deep nourishment spa for all hair types — short.', benefits: ['Nourishing Shampoo', 'Hydra Mask', 'Scalp Massage', 'Blow Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Hair Spas', gender: 'MALE' },
+  { id: 'm-ht-hs-7', name: 'Nourishing Hair Spa - Medium', price: 1400, duration: 75, description: 'Deep nourishment spa for all hair types — medium.', benefits: ['Nourishing Shampoo', 'Hydra Mask', 'Scalp Massage', 'Blow Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Hair Spas', gender: 'MALE' },
+  { id: 'm-ht-hs-8', name: 'Colour Brilliance Hair Spa - Short', price: 950, duration: 45, description: 'Colour-protective spa to enhance vibrancy in short hair.', benefits: ['Color Shampoo', 'Brilliance Mask', 'Scalp Massage', 'Blow Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Hair Spas', gender: 'MALE' },
+  { id: 'm-ht-hs-9', name: 'Colour Brilliance Hair Spa - Medium', price: 1000, duration: 60, description: 'Colour-protective spa for medium hair — lasting vibrancy.', benefits: ['Color Shampoo', 'Brilliance Mask', 'Scalp Massage', 'Blow Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Hair Spas', gender: 'MALE' },
+  { id: 'm-ht-hs-10', name: 'Volume Boost Hair Spa - Short', price: 950, duration: 45, description: 'Volume-boosting spa for fine and flat short hair.', benefits: ['Volume Shampoo', 'Lift Mask', 'Scalp Massage', 'Blow Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Hair Spas', gender: 'MALE' },
+  { id: 'm-ht-hs-11', name: 'Volume Boost Hair Spa - Medium', price: 1000, duration: 60, description: 'Volume-boosting spa for fine medium hair.', benefits: ['Volume Shampoo', 'Lift Mask', 'Scalp Massage', 'Blow Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Hair Spas', gender: 'MALE' },
+  { id: 'm-ht-hs-12', name: 'Shea Butter Hair Spa - Short', price: 2500, duration: 60, description: 'Luxurious Shea Butter spa for ultra-softness in short hair.', benefits: ['Shea Shampoo', 'Shea Butter Mask', 'Scalp Massage', 'Blow Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Hair Spas', gender: 'MALE' },
+  { id: 'm-ht-hs-13', name: 'Shea Butter Hair Spa - Medium', price: 3000, duration: 75, description: 'Luxurious Shea Butter spa for ultra-softness in medium hair.', benefits: ['Shea Shampoo', 'Shea Butter Mask', 'Scalp Massage', 'Blow Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Hair Spas', gender: 'MALE' },
+  // HAIR TREATMENTS & SPAS — Treatments
+  { id: 'm-ht-tr-0', name: 'Balancing Scalp Treatment', price: 1600, duration: 60, description: 'Clinically formulated to restore scalp balance and eliminate excess oil.', benefits: ['Scalp Analysis', 'Balancing Serum', 'Massage', 'Finish'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Treatments', gender: 'MALE' },
+  { id: 'm-ht-tr-1', name: 'Anti Dandruff Treatment', price: 1600, duration: 60, description: 'Targeted treatment to eliminate dandruff and restore a healthy scalp.', benefits: ['Anti-Dandruff Wash', 'Active Serum', 'Scalp Massage', 'Finish'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Treatments', gender: 'MALE' },
+  { id: 'm-ht-tr-2', name: 'Anti Hairfall Treatment', price: 1600, duration: 60, description: 'Strengthening treatment to reduce hairfall and stimulate growth.', benefits: ['Strengthening Wash', 'Growth Serum', 'Scalp Massage', 'Finish'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Treatments', gender: 'MALE' },
+  { id: 'm-ht-tr-3', name: 'Plex Treatment', price: 1800, duration: 60, description: 'Bond-rebuilding Plex treatment to repair chemically treated hair.', benefits: ['Clarifying Wash', 'Bond Plex', 'Reconstruction', 'Blow Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Treatments', gender: 'MALE' },
+  { id: 'm-ht-tr-4', name: 'Shea Butter Anti Dandruff Treatment - Short', price: 2500, duration: 75, description: 'Premium Shea Butter anti-dandruff treatment for short hair.', benefits: ['Shea Wash', 'Anti-Dandruff Serum', 'Scalp Massage', 'Finish'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Treatments', gender: 'MALE' },
+  { id: 'm-ht-tr-5', name: 'Shea Butter Anti Dandruff Treatment - Medium', price: 3000, duration: 90, description: 'Premium Shea Butter anti-dandruff treatment for medium hair.', benefits: ['Shea Wash', 'Anti-Dandruff Serum', 'Scalp Massage', 'Finish'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Treatments', gender: 'MALE' },
+  { id: 'm-ht-tr-6', name: 'Shea Butter Anti Hair Loss Treatment - Short', price: 2500, duration: 75, description: 'Premium Shea Butter anti-hairloss treatment for short hair.', benefits: ['Shea Wash', 'Anti-Loss Serum', 'Scalp Massage', 'Finish'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Treatments', gender: 'MALE' },
+  { id: 'm-ht-tr-7', name: 'Shea Butter Anti Hair Loss Treatment - Medium', price: 3000, duration: 90, description: 'Premium Shea Butter anti-hairloss treatment for medium hair.', benefits: ['Shea Wash', 'Anti-Loss Serum', 'Scalp Massage', 'Finish'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Treatments', gender: 'MALE' },
+  // HAIR TREATMENTS & SPAS — Styling
+  { id: 'm-ht-st-0', name: 'Hair Wash & Blast Dry', price: 200, duration: 20, description: 'Quick cleanse and blast dry — fresh and polished in minutes.', benefits: ['Shampoo', 'Blast Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Styling', gender: 'MALE' },
+  { id: 'm-ht-st-1', name: 'Blow Dry Setting (With Shampoo)', price: 400, duration: 30, description: 'A full blow dry setting after a thorough shampoo.', benefits: ['Shampoo', 'Blow Dry Setting'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Styling', gender: 'MALE' },
+  // BODY TREATMENTS — Waxing
+  { id: 'm-bt-wx-0', name: 'Cheeks/Forehead - Regular', price: 100, duration: 15, description: 'Quick and precise regular wax for cheeks or forehead.', benefits: ['Pre-Wax Prep', 'Regular Wax', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'MALE' },
+  { id: 'm-bt-wx-1', name: 'Cheeks/Forehead - Tripless Wax', price: 150, duration: 15, description: 'Gentler tripless wax for cheeks/forehead.', benefits: ['Pre-Wax Prep', 'Tripless Wax', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'MALE' },
+  { id: 'm-bt-wx-2', name: 'Chest - Regular', price: 500, duration: 30, description: 'Clean, smooth chest with regular wax technique.', benefits: ['Pre-Wax Prep', 'Regular Wax', 'Soothe Lotion'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'MALE' },
+  { id: 'm-bt-wx-3', name: 'Chest - Tripless Wax', price: 700, duration: 30, description: 'Gentle tripless wax for smooth chest.', benefits: ['Pre-Wax Prep', 'Tripless Wax', 'Soothe Lotion'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'MALE' },
+  { id: 'm-bt-wx-4', name: 'Chest - Premium', price: 900, duration: 30, description: 'Premium chest wax for maximum smoothness.', benefits: ['Pre-Wax Prep', 'Premium Wax', 'Calming Serum'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'MALE' },
+  { id: 'm-bt-wx-5', name: 'Underarm - Regular', price: 100, duration: 15, description: 'Efficient underarm waxing with regular wax.', benefits: ['Pre-Wax Prep', 'Regular Wax', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'MALE' },
+  { id: 'm-bt-wx-6', name: 'Underarm - Tripless Wax', price: 200, duration: 15, description: 'Gentler underarm wax with tripless formula.', benefits: ['Pre-Wax Prep', 'Tripless Wax', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'MALE' },
+  { id: 'm-bt-wx-7', name: 'Underarm - Premium', price: 250, duration: 15, description: 'Premium underarm wax for lasting smoothness.', benefits: ['Pre-Wax Prep', 'Premium Wax', 'Calming Serum'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'MALE' },
+  { id: 'm-bt-wx-8', name: 'Full Front / Full Back - Regular', price: 650, duration: 45, description: 'Complete front or back waxing with regular formula.', benefits: ['Pre-Wax Prep', 'Regular Wax', 'Soothe Lotion'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'MALE' },
+  { id: 'm-bt-wx-9', name: 'Full Front / Full Back - Tripless Wax', price: 900, duration: 45, description: 'Gentle tripless wax for full front or back.', benefits: ['Pre-Wax Prep', 'Tripless Wax', 'Soothe Lotion'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'MALE' },
+  { id: 'm-bt-wx-10', name: 'Full Front / Full Back - Premium', price: 1300, duration: 60, description: 'Premium full front or back wax for immaculate results.', benefits: ['Pre-Wax Prep', 'Premium Wax', 'Calming Serum'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'MALE' },
+  { id: 'm-bt-wx-11', name: 'Arms - Regular', price: 350, duration: 30, description: 'Full arm waxing with regular formula.', benefits: ['Pre-Wax Prep', 'Regular Wax', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'MALE' },
+  { id: 'm-bt-wx-12', name: 'Arms - Flavoured', price: 500, duration: 30, description: 'Aromatic flavoured wax for full arms.', benefits: ['Pre-Wax Prep', 'Flavoured Wax', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'MALE' },
+  { id: 'm-bt-wx-13', name: 'Arms - Tripless', price: 600, duration: 30, description: 'Gentle tripless arm wax for sensitive skin.', benefits: ['Pre-Wax Prep', 'Tripless Wax', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'MALE' },
+  { id: 'm-bt-wx-14', name: 'Legs - Regular', price: 500, duration: 40, description: 'Full leg waxing with regular formula.', benefits: ['Pre-Wax Prep', 'Regular Wax', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'MALE' },
+  { id: 'm-bt-wx-15', name: 'Legs - Flavoured', price: 650, duration: 40, description: 'Aromatic flavoured wax for full legs.', benefits: ['Pre-Wax Prep', 'Flavoured Wax', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'MALE' },
+  { id: 'm-bt-wx-16', name: 'Legs - Premium', price: 850, duration: 45, description: 'Premium full leg wax for silky smooth results.', benefits: ['Pre-Wax Prep', 'Premium Wax', 'Calming Serum'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'MALE' },
+  { id: 'm-bt-wx-17', name: 'Full Body - Regular', price: 2000, duration: 90, description: 'Head-to-toe regular wax for complete smoothness.', benefits: ['Pre-Wax Prep', 'Regular Wax Full Body', 'Soothe Lotion'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'MALE' },
+  { id: 'm-bt-wx-18', name: 'Full Body - Flavoured', price: 3000, duration: 90, description: 'Aromatic full body flavoured wax experience.', benefits: ['Pre-Wax Prep', 'Flavoured Wax Full Body', 'Soothe Lotion'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'MALE' },
+  { id: 'm-bt-wx-19', name: 'Full Body - Premium', price: 3500, duration: 120, description: 'Premium full body wax — maximum smoothness and comfort.', benefits: ['Pre-Wax Prep', 'Premium Wax Full Body', 'Calming Serum'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'MALE' },
+  // BODY TREATMENTS — Threading
+  { id: 'm-bt-th-0', name: 'Eyebrow Threading', price: 100, duration: 10, description: 'Precise eyebrow threading for a clean, defined arch.', benefits: ['Threading', 'Shaping', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Threading', gender: 'MALE' },
+  { id: 'm-bt-th-1', name: 'Upperlip Threading', price: 180, duration: 10, description: 'Clean upperlip threading for a neat finish.', benefits: ['Threading', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Threading', gender: 'MALE' },
+  // BODY TREATMENTS — Detan
+  { id: 'm-bt-dt-0', name: 'D-Tan Therapy - Half Arms', price: 1250, duration: 30, description: 'Brightening D-Tan therapy for half arms — even, radiant skin.', benefits: ['Scrub', 'D-Tan Application', 'Massage', 'Moisturise'], category: 'BODY TREATMENTS', subCategory: 'Detan', gender: 'MALE' },
+  { id: 'm-bt-dt-1', name: 'D-Tan Therapy - Half Legs', price: 1500, duration: 30, description: 'Brightening D-Tan therapy for half legs.', benefits: ['Scrub', 'D-Tan Application', 'Massage', 'Moisturise'], category: 'BODY TREATMENTS', subCategory: 'Detan', gender: 'MALE' },
+  { id: 'm-bt-dt-2', name: 'D-Tan Therapy - Full Arms', price: 1550, duration: 40, description: 'Full arm D-Tan therapy for an even skin tone.', benefits: ['Scrub', 'D-Tan Application', 'Massage', 'Moisturise'], category: 'BODY TREATMENTS', subCategory: 'Detan', gender: 'MALE' },
+  { id: 'm-bt-dt-3', name: 'D-Tan Therapy - Full Legs', price: 2400, duration: 50, description: 'Full leg D-Tan therapy for luminous, even skin.', benefits: ['Scrub', 'D-Tan Application', 'Massage', 'Moisturise'], category: 'BODY TREATMENTS', subCategory: 'Detan', gender: 'MALE' },
+  { id: 'm-bt-dt-4', name: 'D-Tan Therapy - Face & Neck', price: 1500, duration: 30, description: 'Targeted D-Tan for face and neck — brighter complexion instantly.', benefits: ['Cleanse', 'D-Tan Application', 'Soothe', 'SPF Finish'], category: 'BODY TREATMENTS', subCategory: 'Detan', gender: 'MALE' },
+  { id: 'm-bt-dt-5', name: 'D-Tan Therapy - Full Body', price: 4200, duration: 90, description: 'Complete full body D-Tan therapy for total brightness.', benefits: ['Scrub', 'D-Tan Full Body', 'Massage', 'Moisturise'], category: 'BODY TREATMENTS', subCategory: 'Detan', gender: 'MALE' },
+  // SKIN CARE — Face Masks
+  { id: 'm-sc-fm-0', name: 'Kavas Mud Mask (Oily Skin) - 20 Min', price: 700, duration: 20, description: 'Deep-cleansing mud mask to purify and control oil.', benefits: ['Cleanse', 'Mud Mask', 'Soothe'], category: 'SKIN CARE', subCategory: 'Face Masks', gender: 'MALE' },
+  { id: 'm-sc-fm-1', name: 'U Las Mask (Mature & Aged Skin) - 20 Min', price: 600, duration: 20, description: 'Firming mask for mature skin, restoring youthful density.', benefits: ['Cleanse', 'Firming Mask', 'Soothe'], category: 'SKIN CARE', subCategory: 'Face Masks', gender: 'MALE' },
+  { id: 'm-sc-fm-2', name: 'Mountain Breeze Mask (Sensitive Skin) - 20 Min', price: 600, duration: 20, description: 'Calming mineral mask for sensitive, reactive skin.', benefits: ['Cleanse', 'Calming Mask', 'Soothe'], category: 'SKIN CARE', subCategory: 'Face Masks', gender: 'MALE' },
+  { id: 'm-sc-fm-3', name: 'Whitening Mask (All Skin Types) - 20 Min', price: 900, duration: 20, description: 'Brightening whitening mask for an instant luminous glow.', benefits: ['Cleanse', 'Whitening Mask', 'Brightening Serum'], category: 'SKIN CARE', subCategory: 'Face Masks', gender: 'MALE' },
+  // SKIN CARE — Peel Off Masks & Clean Ups
+  { id: 'm-sc-po-0', name: 'Energy Clean-up (All Skin Types) - 30 Min', price: 1100, duration: 30, description: 'Energising clean-up for all skin types — fresh and revived.', benefits: ['Double Cleanse', 'Scrub', 'Peel', 'Mask', 'Moisturise'], category: 'SKIN CARE', subCategory: 'Peel Off Masks & Clean Ups', gender: 'MALE' },
+  { id: 'm-sc-po-1', name: 'Four Miracle Clean-up (Pigmented Skin) - 30 Min', price: 1100, duration: 30, description: 'Four-step miracle clean-up targeting pigmentation.', benefits: ['Cleanse', 'Exfoliate', 'Peel', 'Brightening Mask'], category: 'SKIN CARE', subCategory: 'Peel Off Masks & Clean Ups', gender: 'MALE' },
+  { id: 'm-sc-po-2', name: 'Four Wonder Clean-up (Matured Skin) - 30 Min', price: 1100, duration: 30, description: 'Wonder clean-up for matured skin with firming action.', benefits: ['Cleanse', 'Exfoliate', 'Firming Peel', 'Mask'], category: 'SKIN CARE', subCategory: 'Peel Off Masks & Clean Ups', gender: 'MALE' },
+  { id: 'm-sc-po-3', name: 'Miracle Cool Clean-up (Oily & Acne Skin) - 30 Min', price: 1100, duration: 30, description: 'Cool, clarifying clean-up for oily and acne-prone skin.', benefits: ['Salicylic Cleanse', 'BHA Peel', 'Cool Mask', 'Mattify'], category: 'SKIN CARE', subCategory: 'Peel Off Masks & Clean Ups', gender: 'MALE' },
+  { id: 'm-sc-po-4', name: 'Rose Cool Clean-up (Sensitive Skin) - 30 Min', price: 1100, duration: 30, description: 'Gentle rose-infused clean-up for sensitive skin.', benefits: ['Rose Cleanse', 'Gentle Peel', 'Rose Mask', 'Soothe'], category: 'SKIN CARE', subCategory: 'Peel Off Masks & Clean Ups', gender: 'MALE' },
+  { id: 'm-sc-po-5', name: 'Oxygenate Peel Off Mask - 20 Min', price: 950, duration: 20, description: 'Oxygen-infused peel off mask to detox and brighten.', benefits: ['Cleanse', 'Oxygen Peel', 'Hydrate'], category: 'SKIN CARE', subCategory: 'Peel Off Masks & Clean Ups', gender: 'MALE' },
+  { id: 'm-sc-po-6', name: 'Blueberry Detox Peel Off Mask - 20 Min', price: 950, duration: 20, description: 'Antioxidant blueberry peel to detox and refine pores.', benefits: ['Cleanse', 'Blueberry Peel', 'Hydrate'], category: 'SKIN CARE', subCategory: 'Peel Off Masks & Clean Ups', gender: 'MALE' },
+  { id: 'm-sc-po-7', name: 'Antioxidant Peel Off Mask - 20 Min', price: 950, duration: 20, description: 'Antioxidant-rich peel to neutralise free radicals and brighten.', benefits: ['Cleanse', 'Antioxidant Peel', 'Hydrate'], category: 'SKIN CARE', subCategory: 'Peel Off Masks & Clean Ups', gender: 'MALE' },
+  { id: 'm-sc-po-8', name: 'Calm & Soothe Peel Off Mask - 20 Min', price: 1000, duration: 20, description: 'Calming peel to reduce redness and soothe irritation.', benefits: ['Gentle Cleanse', 'Calming Peel', 'Soothe'], category: 'SKIN CARE', subCategory: 'Peel Off Masks & Clean Ups', gender: 'MALE' },
+  { id: 'm-sc-po-9', name: 'Vitamin C Clean-up (Tanned Skin) - 30 Min', price: 1200, duration: 30, description: 'Vitamin C powered clean-up to reverse tan and boost radiance.', benefits: ['Vitamin C Cleanse', 'Brightening Peel', 'Vitamin C Mask', 'SPF'], category: 'SKIN CARE', subCategory: 'Peel Off Masks & Clean Ups', gender: 'MALE' },
+  // FACIALS — Essential Facials
+  { id: 'm-fa-ef-0', name: 'Hydra Dew Facial (Dry & Dehydrated) - 45 Min', price: 1600, duration: 45, description: 'Intensive hydration facial for dry, dehydrated skin — plump and dewy.', benefits: ['Cleanse', 'Exfoliate', 'Hydra Serum', 'Dew Mask', 'Moisturise'], category: 'FACIALS', subCategory: 'Essential Facials', gender: 'MALE' },
+  { id: 'm-fa-ef-1', name: 'Acne Care Facial (Acne Prone) - 45 Min', price: 2000, duration: 45, description: 'Targeted acne-care facial to clear, calm and prevent breakouts.', benefits: ['Salicylic Cleanse', 'Enzyme Peel', 'Anti-Acne Serum', 'Calming Mask'], category: 'FACIALS', subCategory: 'Essential Facials', gender: 'MALE' },
+  { id: 'm-fa-ef-2', name: 'Re-Balancing Facial (Oily & Combination) - 45 Min', price: 2100, duration: 45, description: 'Rebalancing facial for oily and combination skin — matte and fresh.', benefits: ['Cleanse', 'BHA Exfoliate', 'Rebalancing Serum', 'Mattifying Mask'], category: 'FACIALS', subCategory: 'Essential Facials', gender: 'MALE' },
+  { id: 'm-fa-ef-3', name: 'Rejuvenating Facial (All Skin Types) - 45 Min', price: 2300, duration: 45, description: 'A universal rejuvenating facial for brighter, smoother skin.', benefits: ['Cleanse', 'Exfoliate', 'Vitamin Serum', 'Glow Mask', 'Moisturise'], category: 'FACIALS', subCategory: 'Essential Facials', gender: 'MALE' },
+  { id: 'm-fa-ef-4', name: 'Deep Pore Cleansing Facial (Oily Skin) - 45 Min', price: 2600, duration: 45, description: 'Deep pore cleanse for oily skin — visibly clean and refined.', benefits: ['Double Cleanse', 'Steam', 'Extraction', 'Purifying Mask', 'Mattify'], category: 'FACIALS', subCategory: 'Essential Facials', gender: 'MALE' },
+  { id: 'm-fa-ef-5', name: 'Herbal Gold Facial - 45 Min', price: 3000, duration: 45, description: 'Gold-infused herbal facial for luminosity and skin firming.', benefits: ['Herbal Cleanse', 'Gold Peel', 'Gold Serum', '24K Mask', 'Glow Finish'], category: 'FACIALS', subCategory: 'Essential Facials', gender: 'MALE' },
+  { id: 'm-fa-ef-6', name: 'Clarifying Acne Facial - 45 Min', price: 2650, duration: 45, description: 'Advanced clarifying facial to address persistent acne and congestion.', benefits: ['Enzyme Cleanse', 'BHA Peel', 'Clarifying Serum', 'Anti-Acne Mask'], category: 'FACIALS', subCategory: 'Essential Facials', gender: 'MALE' },
+  { id: 'm-fa-ef-7', name: 'Whitening Facial (Dull & Uneven Skin) - 45 Min', price: 3100, duration: 45, description: 'Whitening facial to even skin tone and add instant luminosity.', benefits: ['Brightening Cleanse', 'Vitamin C Peel', 'Whitening Serum', 'Brightening Mask'], category: 'FACIALS', subCategory: 'Essential Facials', gender: 'MALE' },
+  { id: 'm-fa-ef-8', name: 'Hydra Fresh Facial - 45 Min', price: 2650, duration: 45, description: 'A refreshing hydration facial for a fresh, luminous complexion.', benefits: ['Gentle Cleanse', 'Hydra Exfoliate', 'Aqua Serum', 'Hydra Mask'], category: 'FACIALS', subCategory: 'Essential Facials', gender: 'MALE' },
+  { id: 'm-fa-ef-9', name: 'Herbal Diamond Facial - 45 Min', price: 3100, duration: 45, description: 'Diamond-powered herbal facial for radiance and skin renewal.', benefits: ['Herbal Cleanse', 'Diamond Microderm', 'Diamond Serum', 'Herbal Mask'], category: 'FACIALS', subCategory: 'Essential Facials', gender: 'MALE' },
+  // FACIALS — Signature Facials
+  { id: 'm-fa-sf-0', name: 'Uplifting Facial (Matured Skin) - 90 Min', price: 4000, duration: 90, description: 'Signature 90-minute uplifting facial for mature skin — visibly firm and youthful.', benefits: ['Deep Cleanse', 'Retinol Peel', 'Collagen Serum', 'Firming Mask', 'Eye Treatment', 'SPF'], category: 'FACIALS', subCategory: 'Signature Facials', gender: 'MALE' },
+  { id: 'm-fa-sf-1', name: 'Ultra Bright Facial (Pigmented Skin) - 90 Min', price: 4000, duration: 90, description: 'Ultra-brightening 90-minute facial to fade pigmentation and restore clarity.', benefits: ['Brightening Cleanse', 'Kojic Peel', 'Brightening Serum', 'Lightening Mask', 'SPF'], category: 'FACIALS', subCategory: 'Signature Facials', gender: 'MALE' },
+  { id: 'm-fa-sf-2', name: 'Herbal Platinum Signature Facial - 90 Min', price: 4600, duration: 90, description: 'The ultimate herbal platinum signature facial — pure luxury and results.', benefits: ['Herbal Cleanse', 'Platinum Peel', 'Platinum Serum', 'Platinum Mask', 'Eye Treatment', 'SPF'], category: 'FACIALS', subCategory: 'Signature Facials', gender: 'MALE' },
+  // MANI PADI — Hand Spa
+  { id: 'm-mp-hs-0', name: 'Classic Manicure - 30 Min', price: 500, duration: 30, description: 'Classic manicure with shaping, cuticle care and a polished finish.', benefits: ['Soak', 'Cuticle Care', 'Shape', 'Buff', 'Polish'], category: 'MANI PADI', subCategory: 'Hand Spa', gender: 'MALE' },
+  { id: 'm-mp-hs-1', name: 'French Manicure - 45 Min', price: 600, duration: 45, description: 'Elegant French manicure for a clean, classic look.', benefits: ['Soak', 'Cuticle Care', 'Shape', 'French Polish', 'Topcoat'], category: 'MANI PADI', subCategory: 'Hand Spa', gender: 'MALE' },
+  { id: 'm-mp-hs-2', name: 'Antioxidant Manicure - 45 Min', price: 850, duration: 45, description: 'Antioxidant-rich manicure for deeply nourished, smooth hands.', benefits: ['Antioxidant Soak', 'Scrub', 'Cuticle Care', 'Antioxidant Mask', 'Polish'], category: 'MANI PADI', subCategory: 'Hand Spa', gender: 'MALE' },
+  { id: 'm-mp-hs-3', name: 'Brightening & De-Tan Manicure - 60 Min', price: 1200, duration: 60, description: 'Brightening manicure with de-tan treatment for even, luminous hands.', benefits: ['De-Tan Soak', 'Brightening Scrub', 'Cuticle Care', 'De-Tan Mask', 'Polish'], category: 'MANI PADI', subCategory: 'Hand Spa', gender: 'MALE' },
+  { id: 'm-mp-hs-4', name: 'Moisturizing Manicure - 60 Min', price: 1200, duration: 60, description: 'Deep moisture manicure for soft, supple hands.', benefits: ['Hydrating Soak', 'Scrub', 'Cuticle Care', 'Moisture Mask', 'Polish'], category: 'MANI PADI', subCategory: 'Hand Spa', gender: 'MALE' },
+  { id: 'm-mp-hs-5', name: 'Nail Care: Cut, File, Polish', price: 180, duration: 20, description: 'Quick and precise nail care — cut, file and fresh polish.', benefits: ['Cut', 'File', 'Polish'], category: 'MANI PADI', subCategory: 'Hand Spa', gender: 'MALE' },
+  { id: 'm-mp-hs-6', name: 'Nail Care: Change of Polish', price: 160, duration: 15, description: 'Swift polish change for a fresh new colour.', benefits: ['Remove Old Polish', 'New Polish Application'], category: 'MANI PADI', subCategory: 'Hand Spa', gender: 'MALE' },
+  // MANI PADI — Foot Spa
+  { id: 'm-mp-fs-0', name: 'Classic Pedicure - 45 Min', price: 550, duration: 45, description: 'A thorough classic pedicure — smooth, shaped and polished.', benefits: ['Foot Soak', 'Exfoliate', 'Cuticle Care', 'Shape', 'Massage', 'Polish'], category: 'MANI PADI', subCategory: 'Foot Spa', gender: 'MALE' },
+  { id: 'm-mp-fs-1', name: 'French Pedicure - 45 Min', price: 650, duration: 45, description: 'Elegant French pedicure for impeccably neat feet.', benefits: ['Soak', 'Exfoliate', 'Cuticle Care', 'Shape', 'French Polish', 'Topcoat'], category: 'MANI PADI', subCategory: 'Foot Spa', gender: 'MALE' },
+  { id: 'm-mp-fs-2', name: 'Antioxidant Pedicure - 45 Min', price: 950, duration: 45, description: 'Antioxidant-rich pedicure for deeply nourished, refreshed feet.', benefits: ['Antioxidant Soak', 'Scrub', 'Mask', 'Massage', 'Polish'], category: 'MANI PADI', subCategory: 'Foot Spa', gender: 'MALE' },
+  { id: 'm-mp-fs-3', name: 'Brightening & De-Tan Pedicure - 60 Min', price: 1300, duration: 60, description: 'Brightening pedicure with de-tan treatment for luminous feet.', benefits: ['De-Tan Soak', 'Brightening Scrub', 'Cuticle Care', 'De-Tan Mask', 'Polish'], category: 'MANI PADI', subCategory: 'Foot Spa', gender: 'MALE' },
+  { id: 'm-mp-fs-4', name: 'Moisturizing Pedicure - 60 Min', price: 1300, duration: 60, description: 'Deep moisture pedicure for silky, renewed feet.', benefits: ['Hydrating Soak', 'Scrub', 'Cuticle Care', 'Moisture Mask', 'Polish'], category: 'MANI PADI', subCategory: 'Foot Spa', gender: 'MALE' },
+  // SPAS & MASSAGE — Body Spa
+  { id: 'm-sm-bs-0', name: 'Swedish Therapy - 60 Min', price: 2150, duration: 60, description: 'Classic Swedish therapy to ease tension and restore calm.', benefits: ['Consultation', 'Swedish Technique', 'Aroma Oil', 'Scalp Finish'], category: 'SPAS & MASSAGE', subCategory: 'Body Spa', gender: 'MALE' },
+  { id: 'm-sm-bs-1', name: 'Swedish Therapy - 90 Min', price: 2800, duration: 90, description: 'Extended Swedish therapy for complete muscular release.', benefits: ['Consultation', 'Swedish Technique', 'Aroma Oil', 'Scalp Finish'], category: 'SPAS & MASSAGE', subCategory: 'Body Spa', gender: 'MALE' },
+  { id: 'm-sm-bs-2', name: 'Deep Tissue Therapy - 60 Min', price: 2400, duration: 60, description: 'Intensive deep tissue therapy targeting chronic tension and knots.', benefits: ['Consultation', 'Deep Tissue Technique', 'Heated Oils', 'Stretch Finish'], category: 'SPAS & MASSAGE', subCategory: 'Body Spa', gender: 'MALE' },
+  { id: 'm-sm-bs-3', name: 'Deep Tissue Therapy - 90 Min', price: 3200, duration: 90, description: 'Extended deep tissue therapy for profound muscular relief.', benefits: ['Consultation', 'Deep Tissue Technique', 'Heated Oils', 'Stretch Finish'], category: 'SPAS & MASSAGE', subCategory: 'Body Spa', gender: 'MALE' },
+  { id: 'm-sm-bs-4', name: 'Aroma Relax Therapy - 60 Min', price: 2600, duration: 60, description: 'Aromatherapy massage to deeply relax and restore balance.', benefits: ['Consultation', 'Aroma Blend', 'Relaxing Technique', 'Scalp Massage'], category: 'SPAS & MASSAGE', subCategory: 'Body Spa', gender: 'MALE' },
+  { id: 'm-sm-bs-5', name: 'Aroma Relax Therapy - 90 Min', price: 3450, duration: 90, description: 'Extended aromatherapy for total mind-body relaxation.', benefits: ['Consultation', 'Aroma Blend', 'Relaxing Technique', 'Scalp Massage'], category: 'SPAS & MASSAGE', subCategory: 'Body Spa', gender: 'MALE' },
+  { id: 'm-sm-bs-6', name: 'Balinese Therapy - 60 Min', price: 2800, duration: 60, description: 'Traditional Balinese technique combining acupressure and deep relaxation.', benefits: ['Consultation', 'Balinese Technique', 'Exotic Oils', 'Scalp Finish'], category: 'SPAS & MASSAGE', subCategory: 'Body Spa', gender: 'MALE' },
+  { id: 'm-sm-bs-7', name: 'Balinese Therapy - 90 Min', price: 3700, duration: 90, description: 'Extended Balinese experience for complete body harmony.', benefits: ['Consultation', 'Balinese Technique', 'Exotic Oils', 'Scalp Finish'], category: 'SPAS & MASSAGE', subCategory: 'Body Spa', gender: 'MALE' },
+  { id: 'm-sm-bs-8', name: 'De-stress Therapy - 60 Min', price: 3000, duration: 60, description: 'Targeted de-stress therapy to dissolve tension and anxiety.', benefits: ['Consultation', 'De-stress Blend', 'Tension Release', 'Mind Calm'], category: 'SPAS & MASSAGE', subCategory: 'Body Spa', gender: 'MALE' },
+  { id: 'm-sm-bs-9', name: 'De-stress Therapy - 90 Min', price: 3900, duration: 90, description: 'Extended de-stress therapy for ultimate relaxation and renewal.', benefits: ['Consultation', 'De-stress Blend', 'Tension Release', 'Mind Calm'], category: 'SPAS & MASSAGE', subCategory: 'Body Spa', gender: 'MALE' },
+  { id: 'm-sm-bs-10', name: 'STUDIO11 Signature Therapy - 90 Min', price: 4200, duration: 90, description: 'Our exclusive Studio11 ritual — a luxury signature experience.', benefits: ['Consultation', 'Signature Blend', 'Multi-Technique', 'Scalp & Face Finish'], category: 'SPAS & MASSAGE', subCategory: 'Body Spa', gender: 'MALE' },
+  { id: 'm-sm-bs-11', name: 'Full Body Polish', price: 4200, duration: 60, description: 'Exfoliating full body polish to reveal smooth, glowing skin.', benefits: ['Dry Brush', 'Salt/Sugar Polish', 'Rinse', 'Moisturise'], category: 'SPAS & MASSAGE', subCategory: 'Body Spa', gender: 'MALE' },
+  // SPAS & MASSAGE — Head Massage
+  { id: 'm-sm-hm-0', name: 'Scalp Massage - Moroccan Oil', price: 550, duration: 30, description: 'Revitalising scalp massage with premium Moroccan oil.', benefits: ['Moroccan Oil', 'Scalp Massage', 'Hair Nourishment'], category: 'SPAS & MASSAGE', subCategory: 'Head Massage', gender: 'MALE' },
+  { id: 'm-sm-hm-1', name: 'Head Massage - Dry', price: 200, duration: 20, description: 'Quick dry head massage for instant tension relief.', benefits: ['Dry Massage', 'Pressure Points', 'Relax'], category: 'SPAS & MASSAGE', subCategory: 'Head Massage', gender: 'MALE' },
+  { id: 'm-sm-hm-2', name: 'Head Massage - Coconut Oil', price: 250, duration: 20, description: 'Nourishing coconut oil head massage for scalp and hair health.', benefits: ['Coconut Oil', 'Scalp Massage', 'Nourish'], category: 'SPAS & MASSAGE', subCategory: 'Head Massage', gender: 'MALE' },
+  { id: 'm-sm-hm-3', name: 'Head Massage - Mint Oil', price: 350, duration: 20, description: 'Refreshing mint oil head massage for cooling relief.', benefits: ['Mint Oil', 'Scalp Massage', 'Cooling Effect'], category: 'SPAS & MASSAGE', subCategory: 'Head Massage', gender: 'MALE' },
+  { id: 'm-sm-hm-4', name: 'Head Massage - Aroma Oil', price: 400, duration: 20, description: 'Aromatic essential oil head massage for total relaxation.', benefits: ['Aroma Blend', 'Scalp Massage', 'Relax'], category: 'SPAS & MASSAGE', subCategory: 'Head Massage', gender: 'MALE' },
+  { id: 'm-sm-hm-5', name: 'Champi - Herbal Oil', price: 350, duration: 20, description: 'Traditional Champi with herbal oil for deep scalp nourishment.', benefits: ['Herbal Oil', 'Champi Technique', 'Scalp Health'], category: 'SPAS & MASSAGE', subCategory: 'Head Massage', gender: 'MALE' },
+  // SPAS & MASSAGE — Quick Massage
+  { id: 'm-sm-qm-0', name: 'Head Reflexology - 20 Min', price: 600, duration: 20, description: 'Targeted head reflexology for deep pressure point relief.', benefits: ['Pressure Points', 'Reflexology', 'Relax'], category: 'SPAS & MASSAGE', subCategory: 'Quick Massage', gender: 'MALE' },
+  { id: 'm-sm-qm-1', name: 'Foot Reflexology - 30 Min', price: 700, duration: 30, description: 'Targeted foot reflexology to stimulate and revive the whole body.', benefits: ['Foot Soak', 'Reflexology', 'Pressure Points'], category: 'SPAS & MASSAGE', subCategory: 'Quick Massage', gender: 'MALE' },
+  { id: 'm-sm-qm-2', name: 'Foot Reflexology - 60 Min', price: 1300, duration: 60, description: 'Extended foot reflexology for full body balance and deep calm.', benefits: ['Foot Soak', 'Extended Reflexology', 'Pressure Points'], category: 'SPAS & MASSAGE', subCategory: 'Quick Massage', gender: 'MALE' },
+  { id: 'm-sm-qm-3', name: 'Head, Neck & Shoulder Massage - 30 Min', price: 850, duration: 30, description: 'Targeted massage for head, neck and shoulder tension relief.', benefits: ['Neck Release', 'Shoulder Knots', 'Head Pressure', 'Relax'], category: 'SPAS & MASSAGE', subCategory: 'Quick Massage', gender: 'MALE' },
+  // MAKEUP — Makeup Services
+  { id: 'm-mu-ms-0', name: 'Party Make Up - 35 Min', price: 3000, duration: 35, description: 'A polished party-ready look for any occasion.', benefits: ['Skin Prep', 'Foundation', 'Contouring', 'Eye Look', 'Lip Finish'], category: 'MAKEUP', subCategory: 'Makeup Services', gender: 'MALE' },
+  { id: 'm-mu-ms-1', name: 'Party Make Up (Premium)', price: 4400, duration: 60, description: 'Premium party makeup with higher-end products for a flawless finish.', benefits: ['Skin Prep', 'HD Foundation', 'Contour', 'Eye Look', 'Setting Spray'], category: 'MAKEUP', subCategory: 'Makeup Services', gender: 'MALE' },
+  { id: 'm-mu-ms-2', name: 'Fashion Make Up for Photo Shoot', price: 14400, duration: 480, description: 'Editorial fashion makeup for professional photo shoots.', benefits: ['Skin Prep', 'Editorial Foundation', 'Artistic Contouring', 'Bold Eye', 'Touch Up Kit'], category: 'MAKEUP', subCategory: 'Makeup Services', gender: 'MALE' },
+  { id: 'm-mu-ms-3', name: 'Engagement Make Up', price: 3600, duration: 45, description: 'Elegant engagement makeup for a memorable occasion.', benefits: ['Skin Prep', 'Foundation', 'Contouring', 'Eye Look', 'Lip'], category: 'MAKEUP', subCategory: 'Makeup Services', gender: 'MALE' },
+  { id: 'm-mu-ms-4', name: 'Groom Makeup', price: 4200, duration: 60, description: 'Subtle, camera-ready groom makeup for the big day.', benefits: ['Skin Prep', 'Natural Foundation', 'Light Contour', 'Eye Definition', 'Setting Spray'], category: 'MAKEUP', subCategory: 'Makeup Services', gender: 'MALE' },
+  { id: 'm-mu-ms-5', name: 'Friends & Family of the Groom Makeup', price: 2400, duration: 35, description: 'Polished makeup for the groom\'s close ones.', benefits: ['Skin Prep', 'Foundation', 'Eye Look', 'Lip Finish'], category: 'MAKEUP', subCategory: 'Makeup Services', gender: 'MALE' },
+  { id: 'm-mu-ms-6', name: 'Air Brush Makeup', price: 6600, duration: 75, description: 'Flawless airbrush makeup for photography-perfect skin.', benefits: ['Skin Prep', 'Airbrush Foundation', 'Contouring', 'Eye Artistry', 'Setting Spray'], category: 'MAKEUP', subCategory: 'Makeup Services', gender: 'MALE' },
+  // GROOMAL — Bridal/Groomal Packages
+  { id: 'm-gr-bp-0', name: 'Silver Package - 1 Day', price: 7400, duration: 240, description: 'A curated 1-day groomal package for the modern groom.', benefits: ['Hair Styling', 'Facial', 'Massage', 'Grooming', 'Makeup'], category: 'GROOMAL', subCategory: 'Bridal/Groomal Packages', gender: 'MALE' },
+  { id: 'm-gr-bp-1', name: 'Gold Package - 3 Days', price: 12400, duration: 480, description: 'The Gold groomal experience spanning 3 days of luxurious preparation.', benefits: ['Hair Treatments', 'Facials', 'Body Spa', 'Grooming', 'Groom Makeup'], category: 'GROOMAL', subCategory: 'Bridal/Groomal Packages', gender: 'MALE' },
+  { id: 'm-gr-bp-2', name: 'Platinum Package - 5 Days', price: 18600, duration: 720, description: 'Our Platinum 5-day groomal journey — every detail perfected.', benefits: ['Premium Hair', 'Signature Facial', 'Body Polish', 'Spa Therapies', 'Air Brush Makeup'], category: 'GROOMAL', subCategory: 'Bridal/Groomal Packages', gender: 'MALE' },
+  { id: 'm-gr-bp-3', name: 'Well Groom Package', price: 21000, duration: 900, description: 'The ultimate Studio11 groomal package — an unmatched luxury experience.', benefits: ['All Treatments', 'Signature Spa', 'Premium Facials', 'Groom Makeup', 'Styling'], category: 'GROOMAL', subCategory: 'Bridal/Groomal Packages', gender: 'MALE' },
 ];
 
 export const femaleServices: Service[] = [
-  {
-    id: 'female-cuts-0',
-    name: 'Basic Cut',
-    price: 500,
-    duration: 45,
-    description: 'A clean, expert cut that honors your hair\'s natural texture and movement.',
-    benefits: ['Shampoo', 'Precision Cut', 'Blow Dry'],
-    category: 'CUTS',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-cuts-1',
-    name: 'Blowdry Cut',
-    price: 800,
-    duration: 60,
-    description: 'A styled cut with a professional blowout for a salon-fresh finish that lasts.',
-    benefits: ['Shampoo', 'Conditioning', 'Cut', 'Blowout', 'Style Finish'],
-    category: 'CUTS',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-cuts-2',
-    name: 'Premium Cut',
-    price: 1200,
-    duration: 75,
-    description: 'An elevated cut experience with our senior stylists — tailored, perfected, and unforgettable.',
-    benefits: ['Deep Conditioning Wash', 'Consultation', 'Precision Cut', 'Blowout', 'Serum Finish'],
-    category: 'CUTS',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-hair-spa-0',
-    name: 'Classic Spa',
-    price: 1200,
-    duration: 75,
-    description: 'A restorative ritual that deeply nourishes, detangles and brings back your hair\'s natural radiance.',
-    benefits: ['Hydrating Shampoo', 'Spa Mask', 'Scalp Massage', 'Blow Dry', 'Serum'],
-    category: 'HAIR SPA',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-hair-spa-1',
-    name: 'Keratin Smoothing',
-    price: 5000,
-    duration: 150,
-    description: 'Transform frizzy, unruly hair into sleek, smooth silk — results last up to 5 months.',
-    benefits: ['Clarifying Wash', 'Keratin Application', 'Heat Sealing', 'Blowout', 'Finish'],
-    category: 'HAIR SPA',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-hair-spa-2',
-    name: 'Protein Treatment',
-    price: 2000,
-    duration: 90,
-    description: 'Rebuild and strengthen damaged hair from the inside out with our intensive protein therapy.',
-    benefits: ['Protein Shampoo', 'Protein Mask', 'Steam', 'Blow Dry'],
-    category: 'HAIR SPA',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-hair-color-0',
-    name: 'Global Color',
-    price: 3500,
-    duration: 150,
-    description: 'Full-head color with our premium Italian formulas for vibrant, long-lasting results.',
-    benefits: ['Consultation', 'Full Application', 'Processing', 'Toning', 'Deep Condition', 'Blowout'],
-    category: 'HAIR COLOR',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-hair-color-1',
-    name: 'Balayage',
-    price: 6000,
-    duration: 180,
-    description: 'Hand-painted highlights that create a naturally sun-kissed effect unique to you.',
-    benefits: ['Consultation', 'Balayage Application', 'Processing', 'Toning', 'Treatment', 'Blowout'],
-    category: 'HAIR COLOR',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-hair-color-2',
-    name: 'Highlights',
-    price: 4500,
-    duration: 160,
-    description: 'Foil highlights placed for maximum dimension and a luminous, editorial finish.',
-    benefits: ['Consultation', 'Foil Application', 'Processing', 'Gloss', 'Deep Condition', 'Blowout'],
-    category: 'HAIR COLOR',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-facial-0',
-    name: 'Classic Facial',
-    price: 1000,
-    duration: 60,
-    description: 'A thorough cleansing facial that purifies, balances and leaves skin noticeably clearer.',
-    benefits: ['Double Cleanse', 'Exfoliation', 'Steam', 'Extraction', 'Mask', 'Moisturizer'],
-    category: 'FACIAL',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-facial-1',
-    name: 'Brightening Facial',
-    price: 1800,
-    duration: 75,
-    description: 'A vitamin-C rich treatment that fades dullness and delivers an immediate luminous glow.',
-    benefits: ['Cleanse', 'Enzyme Peel', 'Vitamin C Serum', 'Brightening Mask', 'SPF'],
-    category: 'FACIAL',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-facial-2',
-    name: 'Hydration Facial',
-    price: 2200,
-    duration: 90,
-    description: 'An ultra-hydrating treatment that plumps, firms and restores a dewy, lit-from-within complexion.',
-    benefits: ['Micellar Cleanse', 'Hyaluronic Peel', 'Cryo Globes', 'Hydra Mask', 'Rich Moisturizer'],
-    category: 'FACIAL',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-makeup-0',
-    name: 'Day Makeup',
-    price: 2500,
-    duration: 60,
-    description: 'A polished, natural-finish look perfect for events, shoots or a special day out.',
-    benefits: ['Skin Prep', 'Foundation', 'Contouring', 'Eye Look', 'Lip Finish'],
-    category: 'MAKEUP',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-makeup-1',
-    name: 'Party Makeup',
-    price: 4000,
-    duration: 90,
-    description: 'A glamorous, camera-ready look that keeps you luminous all night long.',
-    benefits: ['Skin Prep', 'HD Foundation', 'Contour', 'Dramatic Eye', 'Lashes', 'Lip'],
-    category: 'MAKEUP',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-makeup-2',
-    name: 'Bridal Makeup',
-    price: 12000,
-    duration: 180,
-    description: 'Our signature bridal artistry — flawless, long-lasting and tailored to your vision for the most important day.',
-    benefits: ['Trial Consultation', 'Skin Prep', 'Airbrush Foundation', 'Bridal Eye', 'Lashes', 'Setting Spray', 'Touch Up Kit'],
-    category: 'MAKEUP',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-manicure-0',
-    name: 'Classic Manicure',
-    price: 500,
-    duration: 45,
-    description: 'Beautiful nails crafted with precision — shaped, buffed and finished to perfection.',
-    benefits: ['Soak', 'Cuticle Care', 'Shape', 'Buff', 'Polish'],
-    category: 'MANICURE',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-manicure-1',
-    name: 'Gel Extensions',
-    price: 1500,
-    duration: 90,
-    description: 'Long, flawless gel extensions that add instant length and elegance to your hands.',
-    benefits: ['Prep', 'Extension Application', 'Shaping', 'Gel Overlay', 'Cure', 'Art'],
-    category: 'MANICURE',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-manicure-2',
-    name: 'Nail Art',
-    price: 200,
-    duration: 30,
-    description: 'Custom nail art designed to your mood — from minimalist to maximalist.',
-    benefits: ['Design Consultation', 'Base', 'Art Application', 'Top Coat'],
-    category: 'MANICURE',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-pedicure-0',
-    name: 'Classic Pedicure',
-    price: 600,
-    duration: 50,
-    description: 'A thorough pedicure that smooths, shapes and leaves feet feeling renewed.',
-    benefits: ['Soak', 'Scrub', 'Cuticle Care', 'Shape', 'Massage', 'Polish'],
-    category: 'PEDICURE',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-pedicure-1',
-    name: 'Luxury Pedicure',
-    price: 1200,
-    duration: 80,
-    description: 'A multi-step foot ritual with premium masks and an extended massage for total bliss.',
-    benefits: ['Aromatic Soak', 'Salt Scrub', 'Paraffin Mask', 'Extended Massage', 'Shape', 'Gel Polish'],
-    category: 'PEDICURE',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-packages-0',
-    name: 'Hair + Makeup',
-    price: 6500,
-    duration: 240,
-    description: 'The complete occasion package — a beautiful blowout paired with flawless makeup.',
-    benefits: ['Blowdry Cut', 'Styling', 'Party Makeup', 'Lashes'],
-    category: 'PACKAGES',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-packages-1',
-    name: 'Bridal Package',
-    price: 18000,
-    duration: 360,
-    description: 'Studio11\'s full bridal experience — from hair to face, every detail perfected.',
-    benefits: ['Premium Cut', 'Keratin', 'Balayage', 'Bridal Makeup', 'Manicure', 'Pedicure'],
-    category: 'PACKAGES',
-    gender: 'FEMALE'
-  },
-  {
-    id: 'female-packages-2',
-    name: 'Spa Day',
-    price: 5000,
-    duration: 240,
-    description: 'A full day surrender to luxury — skin, hair and nails all attended to.',
-    benefits: ['Classic Spa', 'Brightening Facial', 'Classic Manicure', 'Luxury Pedicure'],
-    category: 'PACKAGES',
-    gender: 'FEMALE'
-  }
+  // HAIR STYLING — Cuts
+  { id: 'f-hs-c-0', name: 'Kids Hair Cut (Girl, Below 12 Years Old)', price: 300, duration: 20, description: 'A gentle, patient cut for little ones.', benefits: ['Gentle Shampoo', 'Precision Cut', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Cuts', gender: 'FEMALE' },
+  { id: 'f-hs-c-1', name: 'Basic Trim (Straight / U / V Cut)', price: 450, duration: 30, description: 'A clean, precise trim for straight, U or V cut styles.', benefits: ['Shampoo', 'Trim', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Cuts', gender: 'FEMALE' },
+  { id: 'f-hs-c-2', name: 'Classic Hair Cut (With Shampoo + Conditioning + Blow Dry)', price: 700, duration: 60, description: 'A full classic cut experience with shampoo, conditioning and blow dry.', benefits: ['Shampoo', 'Conditioning', 'Cut', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Cuts', gender: 'FEMALE' },
+  { id: 'f-hs-c-3', name: 'Advanced Fashion Hair Cut (Layer, Step, Pixie, Bob with Styling)', price: 1000, duration: 75, description: 'An advanced fashion cut — layers, steps, pixie or bob with expert styling.', benefits: ['Shampoo', 'Conditioning', 'Fashion Cut', 'Styling', 'Serum Finish'], category: 'HAIR STYLING', subCategory: 'Cuts', gender: 'FEMALE' },
+  { id: 'f-hs-c-4', name: 'Director\'s Stylist Cut', price: 1400, duration: 90, description: 'Our most elevated cut by Studio11\'s director stylist — bespoke and unforgettable.', benefits: ['Deep Conditioning Wash', 'Consultation', 'Director Cut', 'Blowout', 'Serum Finish'], category: 'HAIR STYLING', subCategory: 'Cuts', gender: 'FEMALE' },
+  // HAIR STYLING — Colors
+  { id: 'f-hs-col-0', name: 'Root Touch Up - Regular', price: 1200, duration: 45, description: 'Regular root touch-up for seamless coverage.', benefits: ['Root Application', 'Processing', 'Toning', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'FEMALE' },
+  { id: 'f-hs-col-1', name: 'Root Touch Up - Ammonia Free', price: 1500, duration: 45, description: 'Ammonia-free root touch-up for a gentler colour experience.', benefits: ['Ammonia-Free Application', 'Processing', 'Toning', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'FEMALE' },
+  { id: 'f-hs-col-2', name: 'Global Colour - Short Hair', price: 2500, duration: 90, description: 'Full-head vibrant colour for short hair with premium formulas.', benefits: ['Consultation', 'Full Application', 'Processing', 'Toning', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'FEMALE' },
+  { id: 'f-hs-col-3', name: 'Global Colour - Medium Hair', price: 3500, duration: 120, description: 'Rich global colour for medium hair — vivid and fade-resistant.', benefits: ['Consultation', 'Full Application', 'Processing', 'Toning', 'Deep Condition', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'FEMALE' },
+  { id: 'f-hs-col-4', name: 'Global Colour - Long Hair', price: 4500, duration: 150, description: 'Luxurious full-head colour for long hair with lasting vibrancy.', benefits: ['Consultation', 'Full Application', 'Processing', 'Toning', 'Deep Condition', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'FEMALE' },
+  { id: 'f-hs-col-5', name: 'Global Colour (Ammonia Free) - Short Hair', price: 3000, duration: 90, description: 'Ammonia-free global colour for sensitive scalps — short hair.', benefits: ['Ammonia-Free Application', 'Processing', 'Toning', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'FEMALE' },
+  { id: 'f-hs-col-6', name: 'Global Colour (Ammonia Free) - Medium Hair', price: 4200, duration: 120, description: 'Ammonia-free global colour for medium hair.', benefits: ['Ammonia-Free Application', 'Processing', 'Toning', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'FEMALE' },
+  { id: 'f-hs-col-7', name: 'Global Colour (Ammonia Free) - Long Hair', price: 5500, duration: 150, description: 'Ammonia-free full-head colour for long hair — kind to scalp.', benefits: ['Ammonia-Free Application', 'Processing', 'Toning', 'Deep Condition', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'FEMALE' },
+  { id: 'f-hs-col-8', name: 'Global Highlights / Balayage - Medium Hair', price: 5000, duration: 150, description: 'Hand-painted Balayage or foil highlights for sun-kissed dimension on medium hair.', benefits: ['Consultation', 'Balayage/Foil Application', 'Processing', 'Toning', 'Deep Condition', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'FEMALE' },
+  { id: 'f-hs-col-9', name: 'Global Highlights / Balayage - Long Hair', price: 6500, duration: 180, description: 'Luxurious hand-painted Balayage or highlights for long hair.', benefits: ['Consultation', 'Balayage/Foil Application', 'Processing', 'Toning', 'Treatment', 'Blow Dry'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'FEMALE' },
+  { id: 'f-hs-col-10', name: 'Fashion Streak (Per Streak)', price: 300, duration: 20, description: 'A bespoke fashion streak for individual expression.', benefits: ['Streak Application', 'Processing', 'Finish'], category: 'HAIR STYLING', subCategory: 'Colors', gender: 'FEMALE' },
+  // HAIR TREATMENTS & SPAS — Texture
+  { id: 'f-ht-tx-0', name: 'Smoothening / Straightening - Short Hair', price: 4000, duration: 90, description: 'Frizz-banishing smoothening for short hair — silky and manageable.', benefits: ['Clarifying Wash', 'Treatment Application', 'Heat Sealing', 'Blow Out'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Texture', gender: 'FEMALE' },
+  { id: 'f-ht-tx-1', name: 'Smoothening / Straightening - Medium Hair', price: 5000, duration: 120, description: 'Salon-smooth straightening for medium hair lasting months.', benefits: ['Clarifying Wash', 'Treatment Application', 'Heat Sealing', 'Blow Out'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Texture', gender: 'FEMALE' },
+  { id: 'f-ht-tx-2', name: 'Smoothening / Straightening - Long Hair', price: 6000, duration: 150, description: 'Luxurious smoothening treatment for long hair — silky, straight, frizz-free.', benefits: ['Clarifying Wash', 'Treatment Application', 'Heat Sealing', 'Blow Out'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Texture', gender: 'FEMALE' },
+  { id: 'f-ht-tx-3', name: 'Keratin Treatment - Short Hair', price: 4500, duration: 90, description: 'Keratin smoothening for short hair — frizz-free up to 5 months.', benefits: ['Clarifying Wash', 'Keratin Application', 'Heat Sealing', 'Blow Out'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Texture', gender: 'FEMALE' },
+  { id: 'f-ht-tx-4', name: 'Keratin Treatment - Medium Hair', price: 6000, duration: 120, description: 'Keratin treatment for medium hair — silky and manageable.', benefits: ['Clarifying Wash', 'Keratin Application', 'Heat Sealing', 'Blow Out'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Texture', gender: 'FEMALE' },
+  { id: 'f-ht-tx-5', name: 'Keratin Treatment - Long Hair', price: 7500, duration: 150, description: 'Full-length Keratin treatment for long hair — ultimate silkiness.', benefits: ['Clarifying Wash', 'Keratin Application', 'Heat Sealing', 'Blow Out'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Texture', gender: 'FEMALE' },
+  { id: 'f-ht-tx-6', name: 'Hair Botox Treatment - Medium Hair', price: 7000, duration: 150, description: 'Hair Botox for medium hair — intense repair, shine and softness.', benefits: ['Clarifying Wash', 'Botox Application', 'Heat Sealing', 'Blow Out'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Texture', gender: 'FEMALE' },
+  { id: 'f-ht-tx-7', name: 'Hair Botox Treatment - Long Hair', price: 9000, duration: 180, description: 'Hair Botox for long hair — deep repair, radiant smooth finish.', benefits: ['Clarifying Wash', 'Botox Application', 'Heat Sealing', 'Blow Out'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Texture', gender: 'FEMALE' },
+  { id: 'f-ht-tx-8', name: 'Nanoplastia', price: 0, duration: 180, description: 'Ultra-premium nano-keratin treatment — consult for bespoke pricing.', benefits: ['Consultation', 'Nano Application', 'Heat Sealing', 'Expert Finish'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Texture', gender: 'FEMALE' },
+  // HAIR TREATMENTS & SPAS — Hair Spas
+  { id: 'f-ht-hs-0', name: 'L\'Oreal Nourishing Hair Spa - Short', price: 1000, duration: 45, description: 'L\'Oreal professional nourishing spa for short hair.', benefits: ['L\'Oreal Shampoo', 'Spa Mask', 'Scalp Massage', 'Blow Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Hair Spas', gender: 'FEMALE' },
+  { id: 'f-ht-hs-1', name: 'L\'Oreal Nourishing Hair Spa - Medium', price: 1300, duration: 60, description: 'L\'Oreal nourishing spa for medium hair — soft and luminous.', benefits: ['L\'Oreal Shampoo', 'Spa Mask', 'Scalp Massage', 'Blow Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Hair Spas', gender: 'FEMALE' },
+  { id: 'f-ht-hs-2', name: 'L\'Oreal Nourishing Hair Spa - Long', price: 1600, duration: 75, description: 'L\'Oreal nourishing spa for long hair — deeply moisturised and glossy.', benefits: ['L\'Oreal Shampoo', 'Spa Mask', 'Scalp Massage', 'Blow Dry', 'Serum'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Hair Spas', gender: 'FEMALE' },
+  { id: 'f-ht-hs-3', name: 'Deep Repairing Spa for Damaged Hair - Medium', price: 1500, duration: 60, description: 'Intensive deep repair spa for damaged medium hair.', benefits: ['Repairing Shampoo', 'Intense Mask', 'Steam', 'Blow Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Hair Spas', gender: 'FEMALE' },
+  { id: 'f-ht-hs-4', name: 'Deep Repairing Spa for Damaged Hair - Long', price: 1900, duration: 75, description: 'Deep repair spa for damaged long hair — restored, resilient and soft.', benefits: ['Repairing Shampoo', 'Intense Mask', 'Steam', 'Blow Dry', 'Serum'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Hair Spas', gender: 'FEMALE' },
+  { id: 'f-ht-hs-5', name: 'Premium Moroccan Oil Luxury Spa', price: 2800, duration: 90, description: 'A luxurious Moroccan oil spa — extraordinary softness and shine.', benefits: ['Moroccan Shampoo', 'Argan Oil Mask', 'Scalp Massage', 'Steam', 'Blow Dry', 'Serum'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Hair Spas', gender: 'FEMALE' },
+  // HAIR TREATMENTS & SPAS — Treatments
+  { id: 'f-ht-tr-0', name: 'Anti-Dandruff Intensive Treatment', price: 1800, duration: 60, description: 'Clinically targeted treatment to eliminate dandruff and restore scalp health.', benefits: ['Anti-Dandruff Wash', 'Active Serum', 'Scalp Massage', 'Finish'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Treatments', gender: 'FEMALE' },
+  { id: 'f-ht-tr-1', name: 'Anti-Hairfall Control Treatment', price: 1800, duration: 60, description: 'Strengthening treatment to reduce hairfall and stimulate hair growth.', benefits: ['Strengthening Wash', 'Growth Serum', 'Scalp Massage', 'Finish'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Treatments', gender: 'FEMALE' },
+  { id: 'f-ht-tr-2', name: 'Olaplex / Plex Bond Multiplier Treatment', price: 2500, duration: 60, description: 'Bond-rebuilding Olaplex/Plex treatment to repair chemically processed hair.', benefits: ['Clarifying Wash', 'Bond Multiplier', 'Reconstruction', 'Blow Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Treatments', gender: 'FEMALE' },
+  // HAIR TREATMENTS & SPAS — Styling
+  { id: 'f-ht-st-0', name: 'Standard Hair Wash & Blast Dry', price: 300, duration: 20, description: 'Quick cleanse and blast dry — fresh and polished.', benefits: ['Shampoo', 'Blast Dry'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Styling', gender: 'FEMALE' },
+  { id: 'f-ht-st-1', name: 'Blow Dry Setting (Straight / Out-Curls)', price: 600, duration: 40, description: 'Professional blow dry in your preferred style — straight or curled.', benefits: ['Shampoo', 'Blow Dry Setting', 'Serum Finish'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Styling', gender: 'FEMALE' },
+  { id: 'f-ht-st-2', name: 'Tong Curls / Flat Ironing / Crimping', price: 900, duration: 45, description: 'Expert heat styling — tong curls, flat iron sleek or crimped texture.', benefits: ['Heat Protectant', 'Styling', 'Setting Spray', 'Finish'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Styling', gender: 'FEMALE' },
+  { id: 'f-ht-st-3', name: 'Basic Hair Updo / Bun', price: 1200, duration: 45, description: 'An elegant updo or bun — perfectly sculpted for any occasion.', benefits: ['Styling', 'Updo/Bun', 'Pin & Secure', 'Setting Spray'], category: 'HAIR TREATMENTS & SPAS', subCategory: 'Styling', gender: 'FEMALE' },
+  // BODY TREATMENTS — Waxing
+  { id: 'f-bt-wx-0', name: 'Underarms - Honey / Regular Wax', price: 120, duration: 15, description: 'Quick and smooth underarm waxing with honey or regular wax.', benefits: ['Pre-Wax Prep', 'Honey/Regular Wax', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'FEMALE' },
+  { id: 'f-bt-wx-1', name: 'Underarms - Liposoluble / Rica Wax', price: 200, duration: 15, description: 'Gentle premium Rica wax for sensitive underarm skin.', benefits: ['Pre-Wax Prep', 'Rica Wax', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'FEMALE' },
+  { id: 'f-bt-wx-2', name: 'Full Arms - Honey / Regular Wax', price: 400, duration: 30, description: 'Full arm waxing with honey or regular formula.', benefits: ['Pre-Wax Prep', 'Honey/Regular Wax', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'FEMALE' },
+  { id: 'f-bt-wx-3', name: 'Full Arms - Liposoluble / Rica Wax', price: 600, duration: 30, description: 'Gentle Rica wax for full arms — smooth and comfortable.', benefits: ['Pre-Wax Prep', 'Rica Wax', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'FEMALE' },
+  { id: 'f-bt-wx-4', name: 'Full Legs - Honey / Regular Wax', price: 550, duration: 45, description: 'Full leg waxing with honey or regular formula.', benefits: ['Pre-Wax Prep', 'Honey/Regular Wax', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'FEMALE' },
+  { id: 'f-bt-wx-5', name: 'Full Legs - Liposoluble / Rica Wax', price: 850, duration: 45, description: 'Gentle Rica wax for full legs — silky smooth finish.', benefits: ['Pre-Wax Prep', 'Rica Wax', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'FEMALE' },
+  { id: 'f-bt-wx-6', name: 'Full Body Waxing - Regular Wax', price: 1800, duration: 90, description: 'Complete full body regular waxing session.', benefits: ['Pre-Wax Prep', 'Regular Wax Full Body', 'Soothe Lotion'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'FEMALE' },
+  { id: 'f-bt-wx-7', name: 'Full Body Waxing - Liposoluble / Rica Wax', price: 2800, duration: 120, description: 'Premium Rica full body wax for sensitive skin — exceptionally smooth.', benefits: ['Pre-Wax Prep', 'Rica Wax Full Body', 'Calming Serum'], category: 'BODY TREATMENTS', subCategory: 'Waxing', gender: 'FEMALE' },
+  // BODY TREATMENTS — Threading
+  { id: 'f-bt-th-0', name: 'Eyebrow Threading', price: 60, duration: 10, description: 'Precise eyebrow threading for a clean, defined arch.', benefits: ['Threading', 'Shaping', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Threading', gender: 'FEMALE' },
+  { id: 'f-bt-th-1', name: 'Upper Lip / Lower Lip Threading', price: 40, duration: 10, description: 'Clean lip threading for a neat finish.', benefits: ['Threading', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Threading', gender: 'FEMALE' },
+  { id: 'f-bt-th-2', name: 'Forehead / Chin Threading', price: 50, duration: 10, description: 'Precise forehead or chin threading.', benefits: ['Threading', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Threading', gender: 'FEMALE' },
+  { id: 'f-bt-th-3', name: 'Full Face Threading', price: 250, duration: 20, description: 'Complete full-face threading for a clean, polished look.', benefits: ['Full Face Threading', 'Shaping', 'Soothe'], category: 'BODY TREATMENTS', subCategory: 'Threading', gender: 'FEMALE' },
+  // BODY TREATMENTS — Detan
+  { id: 'f-bt-dt-0', name: 'D-Tan Therapy - Face & Neck', price: 600, duration: 30, description: 'Targeted D-Tan for face and neck — instantly brighter complexion.', benefits: ['Cleanse', 'D-Tan Application', 'Soothe', 'SPF'], category: 'BODY TREATMENTS', subCategory: 'Detan', gender: 'FEMALE' },
+  { id: 'f-bt-dt-1', name: 'D-Tan Therapy - Full Arms', price: 800, duration: 40, description: 'D-Tan therapy for full arms — even, luminous skin.', benefits: ['Scrub', 'D-Tan Application', 'Massage', 'Moisturise'], category: 'BODY TREATMENTS', subCategory: 'Detan', gender: 'FEMALE' },
+  { id: 'f-bt-dt-2', name: 'D-Tan Therapy - Full Legs', price: 1000, duration: 50, description: 'D-Tan therapy for full legs — smooth and radiant skin.', benefits: ['Scrub', 'D-Tan Application', 'Massage', 'Moisturise'], category: 'BODY TREATMENTS', subCategory: 'Detan', gender: 'FEMALE' },
+  { id: 'f-bt-dt-3', name: 'D-Tan Therapy - Full Body', price: 3200, duration: 90, description: 'Complete full body D-Tan therapy for total radiance.', benefits: ['Scrub', 'D-Tan Full Body', 'Massage', 'Moisturise'], category: 'BODY TREATMENTS', subCategory: 'Detan', gender: 'FEMALE' },
+  // SKIN CARE — Face Masks
+  { id: 'f-sc-fm-0', name: 'Hydrating Clay Mask (Dry Skin) - 20 Min', price: 800, duration: 20, description: 'Deeply hydrating clay mask for dry and dehydrated skin.', benefits: ['Cleanse', 'Hydrating Clay Mask', 'Soothe'], category: 'SKIN CARE', subCategory: 'Face Masks', gender: 'FEMALE' },
+  { id: 'f-sc-fm-1', name: 'Charcoal Oil-Control Mask (Oily Skin) - 20 Min', price: 900, duration: 20, description: 'Charcoal mask to control oil and minimise pores.', benefits: ['Cleanse', 'Charcoal Mask', 'Mattify'], category: 'SKIN CARE', subCategory: 'Face Masks', gender: 'FEMALE' },
+  // SKIN CARE — Peel Off Masks
+  { id: 'f-sc-po-0', name: 'Vitamin C Brightening Peel Off Mask - 20 Min', price: 1100, duration: 20, description: 'Vitamin C powered peel to brighten and even skin tone.', benefits: ['Cleanse', 'Vitamin C Peel', 'Brightening Finish'], category: 'SKIN CARE', subCategory: 'Peel Off Masks', gender: 'FEMALE' },
+  { id: 'f-sc-po-1', name: 'Gold Radiance Luxury Peel Off Mask - 20 Min', price: 1300, duration: 20, description: 'Luxurious gold peel for an instant radiance boost.', benefits: ['Cleanse', 'Gold Peel', 'Radiance Finish'], category: 'SKIN CARE', subCategory: 'Peel Off Masks', gender: 'FEMALE' },
+  // SKIN CARE — Clean Ups
+  { id: 'f-sc-cu-0', name: 'Fruit Refreshing Clean-up - 30 Min', price: 900, duration: 30, description: 'A fresh fruity clean-up for a revived, glowing complexion.', benefits: ['Fruit Cleanse', 'Exfoliate', 'Fruit Mask', 'Moisturise'], category: 'SKIN CARE', subCategory: 'Clean Ups', gender: 'FEMALE' },
+  { id: 'f-sc-cu-1', name: 'Insta Glow / De-Tan Clean-up - 30 Min', price: 1200, duration: 30, description: 'Instant glow and de-tan clean-up for a brighter complexion.', benefits: ['De-Tan Cleanse', 'Brightening Scrub', 'Glow Mask', 'SPF'], category: 'SKIN CARE', subCategory: 'Clean Ups', gender: 'FEMALE' },
+  { id: 'f-sc-cu-2', name: 'Deep Pore Cleansing Clean-up - 30 Min', price: 1400, duration: 30, description: 'Deep pore cleansing clean-up to purify and refine skin texture.', benefits: ['Double Cleanse', 'Steam', 'Extraction', 'Purifying Mask', 'Moisturise'], category: 'SKIN CARE', subCategory: 'Clean Ups', gender: 'FEMALE' },
+  // FACIALS — Essential Facials
+  { id: 'f-fa-ef-0', name: 'Cheryl\'s Glow Facial - 45 Min', price: 2200, duration: 45, description: 'A radiance-boosting facial for a bright, even complexion.', benefits: ['Cleanse', 'Exfoliate', 'Glow Serum', 'Brightening Mask', 'Moisturise'], category: 'FACIALS', subCategory: 'Essential Facials', gender: 'FEMALE' },
+  { id: 'f-fa-ef-1', name: 'VLCC Natural Gold Facial - 45 Min', price: 2600, duration: 45, description: 'Gold-infused VLCC facial for luminosity and skin firming.', benefits: ['Gold Cleanse', 'Gold Peel', 'Gold Serum', '24K Mask', 'Moisturise'], category: 'FACIALS', subCategory: 'Essential Facials', gender: 'FEMALE' },
+  { id: 'f-fa-ef-2', name: 'O3+ Whitening / Brightening Facial - 60 Min', price: 3800, duration: 60, description: 'O3+ powered whitening facial for a visibly brighter, even skin tone.', benefits: ['O3+ Cleanse', 'Brightening Peel', 'Vitamin C Serum', 'Whitening Mask', 'SPF'], category: 'FACIALS', subCategory: 'Essential Facials', gender: 'FEMALE' },
+  // FACIALS — Signature Facials
+  { id: 'f-fa-sf-0', name: 'Hydra Dew Treatment Facial - 75 Min', price: 4500, duration: 75, description: 'A deep-dive hydration facial for plump, dewy and radiant skin.', benefits: ['Micellar Cleanse', 'Hydra Exfoliate', 'Hyaluronic Serum', 'Hydra Mask', 'Rich Moisturiser'], category: 'FACIALS', subCategory: 'Signature Facials', gender: 'FEMALE' },
+  { id: 'f-fa-sf-1', name: 'Studio11 Luxury Anti-Aging Facial - 90 Min', price: 5200, duration: 90, description: 'The ultimate 90-minute anti-aging facial — visibly firm, youthful and luminous.', benefits: ['Deep Cleanse', 'Retinol Peel', 'Collagen Serum', 'Firming Mask', 'Eye Treatment', 'SPF Finish'], category: 'FACIALS', subCategory: 'Signature Facials', gender: 'FEMALE' },
+  // MANI PADI — Hand Spa
+  { id: 'f-mp-hs-0', name: 'Classic Manicure (Cut, File, Scrub, Polish)', price: 600, duration: 40, description: 'A thorough classic manicure — cut, file, scrub and polished to perfection.', benefits: ['Soak', 'Cuticle Care', 'Shape', 'Scrub', 'Polish'], category: 'MANI PADI', subCategory: 'Hand Spa', gender: 'FEMALE' },
+  { id: 'f-mp-hs-1', name: 'Deluxe Nourishing Hand Spa Manicure', price: 1100, duration: 60, description: 'A luxurious hand spa manicure for deeply nourished, beautiful hands.', benefits: ['Hydrating Soak', 'Scrub', 'Cuticle Care', 'Moisture Mask', 'Massage', 'Polish'], category: 'MANI PADI', subCategory: 'Hand Spa', gender: 'FEMALE' },
+  { id: 'f-mp-hs-2', name: 'Gel Nail Polish Application', price: 700, duration: 30, description: 'Long-lasting gel polish for chip-free colour up to 3 weeks.', benefits: ['Nail Prep', 'Gel Application', 'Cure', 'Gloss Finish'], category: 'MANI PADI', subCategory: 'Hand Spa', gender: 'FEMALE' },
+  // MANI PADI — Foot Spa
+  { id: 'f-mp-fs-0', name: 'Classic Pedicure (Relaxing Soak, Scrub, Polish)', price: 750, duration: 50, description: 'A thorough classic pedicure with soak, scrub and a polished finish.', benefits: ['Relaxing Soak', 'Scrub', 'Cuticle Care', 'Shape', 'Massage', 'Polish'], category: 'MANI PADI', subCategory: 'Foot Spa', gender: 'FEMALE' },
+  { id: 'f-mp-fs-1', name: 'Deluxe Detoxifying Foot Spa Pedicure', price: 1400, duration: 75, description: 'A luxurious detoxifying foot spa pedicure for total foot renewal.', benefits: ['Detox Soak', 'Scrub', 'Mask', 'Extended Massage', 'Shape', 'Polish'], category: 'MANI PADI', subCategory: 'Foot Spa', gender: 'FEMALE' },
+  { id: 'f-mp-fs-2', name: 'Callus Smoothing Foot Therapy Add-on', price: 500, duration: 20, description: 'Targeted callus smoothing add-on for silky smooth soles.', benefits: ['Callus Removal', 'Smoothing', 'Moisturise'], category: 'MANI PADI', subCategory: 'Foot Spa', gender: 'FEMALE' },
+  // SPAS & MASSAGE — Body Spa
+  { id: 'f-sm-bs-0', name: 'Swedish Full Body Massage - 60 Min', price: 2200, duration: 60, description: 'Classic Swedish massage for full body relaxation and tension release.', benefits: ['Consultation', 'Swedish Technique', 'Aroma Oil', 'Scalp Finish'], category: 'SPAS & MASSAGE', subCategory: 'Body Spa', gender: 'FEMALE' },
+  { id: 'f-sm-bs-1', name: 'Swedish Full Body Massage - 90 Min', price: 3000, duration: 90, description: 'Extended Swedish massage for complete body calm and restoration.', benefits: ['Consultation', 'Swedish Technique', 'Aroma Oil', 'Scalp Finish'], category: 'SPAS & MASSAGE', subCategory: 'Body Spa', gender: 'FEMALE' },
+  { id: 'f-sm-bs-2', name: 'Deep Tissue Therapy Massage - 60 Min', price: 2600, duration: 60, description: 'Intense deep tissue massage targeting chronic tension and knots.', benefits: ['Consultation', 'Deep Tissue Technique', 'Heated Oils', 'Stretch Finish'], category: 'SPAS & MASSAGE', subCategory: 'Body Spa', gender: 'FEMALE' },
+  { id: 'f-sm-bs-3', name: 'Aroma Wellness Relaxing Massage - 90 Min', price: 3500, duration: 90, description: 'Aromatic wellness massage for deep relaxation and mind-body harmony.', benefits: ['Consultation', 'Aroma Blend', 'Relaxing Technique', 'Scalp Massage'], category: 'SPAS & MASSAGE', subCategory: 'Body Spa', gender: 'FEMALE' },
+  { id: 'f-sm-bs-4', name: 'Full Body Exfoliating Glow Polish', price: 3800, duration: 60, description: 'Full body exfoliating glow polish for radiant, silk-smooth skin.', benefits: ['Dry Brush', 'Glow Polish', 'Rinse', 'Moisturise'], category: 'SPAS & MASSAGE', subCategory: 'Body Spa', gender: 'FEMALE' },
+  // SPAS & MASSAGE — Head Massage
+  { id: 'f-sm-hm-0', name: 'Traditional Nourishing Coconut Oil Massage', price: 400, duration: 20, description: 'Nourishing traditional coconut oil head massage for scalp health.', benefits: ['Coconut Oil', 'Scalp Massage', 'Nourish'], category: 'SPAS & MASSAGE', subCategory: 'Head Massage', gender: 'FEMALE' },
+  { id: 'f-sm-hm-1', name: 'Stress-Relief Mint Oil Head Massage', price: 500, duration: 20, description: 'Refreshing mint oil head massage for cooling stress relief.', benefits: ['Mint Oil', 'Scalp Massage', 'Cooling Effect'], category: 'SPAS & MASSAGE', subCategory: 'Head Massage', gender: 'FEMALE' },
+  { id: 'f-sm-hm-2', name: 'Premium Moroccan Argan Oil Head Massage', price: 700, duration: 20, description: 'Premium Moroccan argan oil head massage for ultimate nourishment.', benefits: ['Argan Oil', 'Scalp Massage', 'Hair Nourishment'], category: 'SPAS & MASSAGE', subCategory: 'Head Massage', gender: 'FEMALE' },
+  // SPAS & MASSAGE — Quick Massage
+  { id: 'f-sm-qm-0', name: 'Relaxing Foot Reflexology - 30 Min', price: 600, duration: 30, description: 'Targeted foot reflexology for relaxation and energy revival.', benefits: ['Foot Soak', 'Reflexology', 'Pressure Points'], category: 'SPAS & MASSAGE', subCategory: 'Quick Massage', gender: 'FEMALE' },
+  { id: 'f-sm-qm-1', name: 'Neck, Back & Shoulder Quick Relief - 30 Min', price: 850, duration: 30, description: 'Targeted quick massage for neck, back and shoulder relief.', benefits: ['Neck Release', 'Back Knots', 'Shoulder Tension', 'Relax'], category: 'SPAS & MASSAGE', subCategory: 'Quick Massage', gender: 'FEMALE' },
+  // MAKEUP — Makeup Services
+  { id: 'f-mu-ms-0', name: 'Day / Light Party Makeup', price: 3500, duration: 60, description: 'A polished, natural-glow look for daytime events and occasions.', benefits: ['Skin Prep', 'Foundation', 'Contouring', 'Eye Look', 'Lip Finish'], category: 'MAKEUP', subCategory: 'Makeup Services', gender: 'FEMALE' },
+  { id: 'f-mu-ms-1', name: 'Evening / Heavy Gala HD Makeup', price: 5500, duration: 90, description: 'Glamorous HD gala makeup for evening events — camera-ready and stunning.', benefits: ['Skin Prep', 'HD Foundation', 'Contour', 'Dramatic Eye', 'Lashes', 'Setting Spray'], category: 'MAKEUP', subCategory: 'Makeup Services', gender: 'FEMALE' },
+  { id: 'f-mu-ms-2', name: 'Engagement / Roka Special Makeup', price: 8000, duration: 120, description: 'Exquisite engagement or Roka makeup for a flawless, unforgettable look.', benefits: ['Trial Consultation', 'Skin Prep', 'Premium Foundation', 'Engagement Eye', 'Lashes', 'Setting Spray'], category: 'MAKEUP', subCategory: 'Makeup Services', gender: 'FEMALE' },
+  { id: 'f-mu-ms-3', name: 'Saree Draping & Styling Only', price: 800, duration: 30, description: 'Expert saree draping and styling for a perfectly presented traditional look.', benefits: ['Draping', 'Pleating', 'Pin & Secure', 'Style Finish'], category: 'MAKEUP', subCategory: 'Makeup Services', gender: 'FEMALE' },
+  // BRIDAL — Bridal Packages
+  { id: 'f-br-bp-0', name: 'Pre-Bridal Essential Glow Package (1 Day)', price: 6500, duration: 240, description: 'A curated 1-day pre-bridal glow package to prepare your skin for the big day.', benefits: ['Facial', 'Body Treatment', 'Manicure', 'Pedicure', 'Threading'], category: 'BRIDAL', subCategory: 'Bridal Packages', gender: 'FEMALE' },
+  { id: 'f-br-bp-1', name: 'Pre-Bridal Radiance Luxury Package (3 Days)', price: 14000, duration: 480, description: 'A 3-day pre-bridal radiance journey for total beauty preparation.', benefits: ['Signature Facials', 'Hair Treatment', 'Body Spa', 'Manicure', 'Pedicure', 'Waxing'], category: 'BRIDAL', subCategory: 'Bridal Packages', gender: 'FEMALE' },
+  { id: 'f-br-bp-2', name: 'Traditional High-Definition (HD) Bridal Makeup', price: 16000, duration: 180, description: 'Traditional HD bridal makeup for a flawless, timeless bridal look.', benefits: ['Trial Consultation', 'Skin Prep', 'HD Foundation', 'Bridal Eye', 'Lashes', 'Setting Spray', 'Touch Up Kit'], category: 'BRIDAL', subCategory: 'Bridal Packages', gender: 'FEMALE' },
+  { id: 'f-br-bp-3', name: 'Premium Celebrity Airbrush Bridal Makeup', price: 24000, duration: 240, description: 'The ultimate celebrity airbrush bridal makeup — flawless, long-lasting and legendary.', benefits: ['Trial Consultation', 'Skin Prep', 'Airbrush Foundation', 'Celebrity Bridal Eye', 'Premium Lashes', 'Setting Spray', 'Touch Up Kit'], category: 'BRIDAL', subCategory: 'Bridal Packages', gender: 'FEMALE' },
 ];
 
-export const kidsServices: Service[] = [
-  {
-    id: 'kids-cuts-0',
-    name: 'Basic Cut',
-    price: 250,
-    duration: 20,
-    description: 'A gentle, fun cut that keeps little ones comfortable and looking adorable.',
-    benefits: ['Gentle Wash', 'Style Cut', 'Blow Dry'],
-    category: 'CUTS',
-    gender: 'KIDS'
-  },
-  {
-    id: 'kids-cuts-1',
-    name: 'Style Cut',
-    price: 350,
-    duration: 30,
-    description: 'A little-person-sized style cut with extra care and patience.',
-    benefits: ['Gentle Wash', 'Consultation', 'Style Cut', 'Finish'],
-    category: 'CUTS',
-    gender: 'KIDS'
-  },
-  {
-    id: 'kids-hair-spa-0',
-    name: 'Basic Spa',
-    price: 600,
-    duration: 45,
-    description: 'A mild, nurturing spa treatment safe for children\'s delicate hair.',
-    benefits: ['Gentle Shampoo', 'Kids Mask', 'Scalp Massage', 'Soft Blow Dry'],
-    category: 'HAIR SPA',
-    gender: 'KIDS'
-  },
-  {
-    id: 'kids-hair-color-0',
-    name: 'Fun Highlights',
-    price: 1500,
-    duration: 60,
-    description: 'Kid-safe, vibrant highlights for a fun, expressive look they\'ll love.',
-    benefits: ['Consultation', 'Safe Color Application', 'Processing', 'Blow Dry'],
-    category: 'HAIR COLOR',
-    gender: 'KIDS'
-  },
-  {
-    id: 'kids-manicure-0',
-    name: 'Basic Manicure',
-    price: 300,
-    duration: 30,
-    description: 'A fun, careful manicure with non-toxic polish for little hands.',
-    benefits: ['Soak', 'Shape', 'Safe Polish'],
-    category: 'MANICURE',
-    gender: 'KIDS'
-  },
-  {
-    id: 'kids-pedicure-0',
-    name: 'Basic Pedicure',
-    price: 350,
-    duration: 30,
-    description: 'A gentle pedicure experience for happy little feet.',
-    benefits: ['Foot Soak', 'Shape', 'Safe Polish'],
-    category: 'PEDICURE',
-    gender: 'KIDS'
-  },
-  {
-    id: 'kids-packages-0',
-    name: 'Hair + Spa',
-    price: 800,
-    duration: 60,
-    description: 'A complete kids\' grooming treat — a fresh cut followed by a nurturing spa.',
-    benefits: ['Style Cut', 'Kids Hair Spa', 'Blow Dry'],
-    category: 'PACKAGES',
-    gender: 'KIDS'
-  }
-];
+export function getServicesByGenderAndCategory(gender: Gender, category: CategoryName): Service[] {
+  const all = gender === 'MALE' ? maleServices : femaleServices;
+  return all.filter(s => s.category === category);
+}
 
-export const getServicesByGenderAndCategory = (gender: Gender, category: CategoryName): Service[] => {
-  let list: Service[] = [];
-  if (gender === 'MALE') list = maleServices;
-  else if (gender === 'FEMALE') list = femaleServices;
-  else if (gender === 'KIDS') list = kidsServices;
-
-  return list.filter(s => s.category === category);
-};
+export function getServicesByGenderCategoryAndSubCategory(gender: Gender, category: CategoryName, subCategory: string): Service[] {
+  const all = gender === 'MALE' ? maleServices : femaleServices;
+  if (!subCategory) return all.filter(s => s.category === category);
+  return all.filter(s => s.category === category && s.subCategory === subCategory);
+}

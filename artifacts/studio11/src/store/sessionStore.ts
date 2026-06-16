@@ -1,16 +1,29 @@
 import { create } from 'zustand';
 
-export type Gender = 'MALE' | 'FEMALE' | 'KIDS';
-export type CategoryName = 'CUTS' | 'HAIR SPA' | 'HAIR COLOR' | 'BEARD' | 'FACIAL' | 'MAKEUP' | 'MANICURE' | 'PEDICURE' | 'PACKAGES';
+export type Gender = 'MALE' | 'FEMALE';
+export type CategoryName =
+  | 'HAIR STYLING'
+  | 'HAIR TREATMENTS & SPAS'
+  | 'BODY TREATMENTS'
+  | 'SKIN CARE'
+  | 'FACIALS'
+  | 'MANI PADI'
+  | 'SPAS & MASSAGE'
+  | 'MAKEUP'
+  | 'GROOMAL'
+  | 'BRIDAL';
+
+export type BottomTab = 'menu' | 'ourwork' | 'products' | 'rewards';
 
 export interface Service {
   id: string;
   name: string;
   price: number;
-  duration: number; // minutes
+  duration: number;
   description: string;
   benefits: string[];
   category: CategoryName;
+  subCategory: string;
   gender: Gender;
 }
 
@@ -23,6 +36,8 @@ interface SessionStore {
   appScreen: 'intro' | 'gender' | 'main';
   gender: Gender;
   activeCategory: CategoryName;
+  activeSubCategory: string;
+  activeBottomTab: BottomTab;
   selectedService: Service | null;
   drawerOpen: boolean;
   sessionDrawerOpen: boolean;
@@ -32,6 +47,8 @@ interface SessionStore {
   setAppScreen: (screen: 'intro' | 'gender' | 'main') => void;
   setGender: (gender: Gender) => void;
   setActiveCategory: (cat: CategoryName) => void;
+  setActiveSubCategory: (sub: string) => void;
+  setActiveBottomTab: (tab: BottomTab) => void;
   selectService: (service: Service | null) => void;
   setDrawerOpen: (open: boolean) => void;
   setSessionDrawerOpen: (open: boolean) => void;
@@ -46,7 +63,9 @@ interface SessionStore {
 export const useSessionStore = create<SessionStore>((set, get) => ({
   appScreen: 'intro',
   gender: 'MALE',
-  activeCategory: 'CUTS',
+  activeCategory: 'HAIR STYLING',
+  activeSubCategory: 'Cuts',
+  activeBottomTab: 'menu',
   selectedService: null,
   drawerOpen: false,
   sessionDrawerOpen: false,
@@ -54,15 +73,17 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
   showDecisionModal: false,
   lastAddedService: null,
   setAppScreen: (screen) => set({ appScreen: screen }),
-  setGender: (gender) => set({ gender, activeCategory: 'CUTS', selectedService: null, drawerOpen: false }),
-  setActiveCategory: (activeCategory) => set({ activeCategory, selectedService: null, drawerOpen: false }),
+  setGender: (gender) => set({ gender, activeCategory: 'HAIR STYLING', activeSubCategory: 'Cuts', selectedService: null, drawerOpen: false }),
+  setActiveCategory: (activeCategory) => set({ activeCategory, activeSubCategory: '', selectedService: null, drawerOpen: false }),
+  setActiveSubCategory: (activeSubCategory) => set({ activeSubCategory, selectedService: null, drawerOpen: false }),
+  setActiveBottomTab: (activeBottomTab) => set({ activeBottomTab }),
   selectService: (selectedService) => set({ selectedService, drawerOpen: !!selectedService }),
   setDrawerOpen: (drawerOpen) => set({ drawerOpen, selectedService: drawerOpen ? get().selectedService : null }),
   setSessionDrawerOpen: (sessionDrawerOpen) => set({ sessionDrawerOpen }),
   addToSession: (service) => {
     const items = get().sessionItems;
     const existing = items.find(i => i.service.id === service.id);
-    if (existing) return; // no duplicates
+    if (existing) return;
     set({ sessionItems: [...items, { service, quantity: 1 }], lastAddedService: service, showDecisionModal: true, drawerOpen: false, selectedService: null });
   },
   removeFromSession: (serviceId) => set({ sessionItems: get().sessionItems.filter(i => i.service.id !== serviceId) }),
