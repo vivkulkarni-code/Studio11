@@ -10,6 +10,7 @@ import { useAccentColor } from '@/hooks/useAccentColor';
 import { useSwipe } from '@/hooks/useSwipe';
 import logoPath from '@assets/logo_transparent.png';
 import maniPadiVideoUrl from '@assets/grok_video_2026-06-17-14-00-05_1781685081657.mp4';
+import bridalVideoUrl from '@assets/grok_video_2026-06-17-17-44-23_1781699536476.mp4';
 
 /* ─── Service name bracket parser ─────────────────────────────────────────── */
 function toSentenceCase(str: string): string {
@@ -295,6 +296,7 @@ type MediaEntry = { type: 'video'; src: string } | { type: 'image'; src: string 
 
 const CATEGORY_MEDIA: Partial<Record<string, MediaEntry>> = {
   'FEMALE::MANI PADI': { type: 'video', src: maniPadiVideoUrl },
+  'FEMALE::BRIDAL':    { type: 'video', src: bridalVideoUrl },
 };
 
 function getCategoryMedia(gender: string, category: string): MediaEntry | null {
