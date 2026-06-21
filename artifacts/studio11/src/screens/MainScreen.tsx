@@ -15,6 +15,12 @@ import femaleCutsVideoUrl from '@assets/cuts_1781949331237.mp4';
 import femaleStylingVideoUrl from '@assets/hair_Styling_1781949362487.mp4';
 import femaleColorsVideoUrl from '@assets/colors_1781949381451.mp4';
 import facialsVideoUrl from '@assets/Facials_1782057585099.mp4';
+import textureVideoUrl from '@assets/Texure_1782058341128.mp4';
+import detanVideoUrl from '@assets/De-tan_1782058353670.mp4';
+import cleanUpVideoUrl from '@assets/Clean_Up_1782058365550.mp4';
+import maskVideoUrl from '@assets/Mask_1782058380380.mp4';
+import bodyTreatmentsVideoUrl from '@assets/Body_Treatments_1782058396305.mp4';
+import hairSpaVideoUrl from '@assets/hair_spa_1782058434828.mp4';
 
 /* ─── Service name bracket parser ─────────────────────────────────────────── */
 function toSentenceCase(str: string): string {
@@ -306,6 +312,15 @@ const CATEGORY_MEDIA: Partial<Record<string, MediaEntry>> = {
   'FEMALE::HAIR STYLING::Cuts':    { type: 'video', src: femaleCutsVideoUrl },
   'FEMALE::HAIR STYLING::Styling': { type: 'video', src: femaleStylingVideoUrl },
   'FEMALE::HAIR STYLING::Colors':  { type: 'video', src: femaleColorsVideoUrl },
+  // Female — HAIR TREATMENTS & SPAS sub-categories
+  'FEMALE::HAIR TREATMENTS & SPAS::Texture':   { type: 'video', src: textureVideoUrl },
+  'FEMALE::HAIR TREATMENTS & SPAS::Hair Spas': { type: 'video', src: hairSpaVideoUrl },
+  // Female — SKIN CARE sub-categories
+  'FEMALE::SKIN CARE::De-Tan':  { type: 'video', src: detanVideoUrl },
+  'FEMALE::SKIN CARE::Clean Up': { type: 'video', src: cleanUpVideoUrl },
+  'FEMALE::SKIN CARE::Mask':    { type: 'video', src: maskVideoUrl },
+  // Female — BODY TREATMENTS category
+  'FEMALE::BODY TREATMENTS': { type: 'video', src: bodyTreatmentsVideoUrl },
 };
 
 function getCategoryMedia(gender: string, category: string, subCategory?: string): MediaEntry | null {
