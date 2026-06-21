@@ -14,6 +14,7 @@ import bridalVideoUrl from '@assets/grok_video_2026-06-17-17-44-23_1781699536476
 import femaleCutsVideoUrl from '@assets/cuts_1781949331237.mp4';
 import femaleStylingVideoUrl from '@assets/hair_Styling_1781949362487.mp4';
 import femaleColorsVideoUrl from '@assets/colors_1781949381451.mp4';
+import facialsVideoUrl from '@assets/Facials_1782057585099.mp4';
 
 /* ─── Service name bracket parser ─────────────────────────────────────────── */
 function toSentenceCase(str: string): string {
@@ -298,6 +299,9 @@ const CATEGORY_MEDIA: Partial<Record<string, MediaEntry>> = {
   // Female — category level
   'FEMALE::MANI PADI': { type: 'video', src: maniPadiVideoUrl },
   'FEMALE::BRIDAL':    { type: 'video', src: bridalVideoUrl },
+  'FEMALE::FACIALS':   { type: 'video', src: facialsVideoUrl },
+  // Male — category level
+  'MALE::FACIALS':     { type: 'video', src: facialsVideoUrl },
   // Female — sub-category level (HAIR STYLING)
   'FEMALE::HAIR STYLING::Cuts':    { type: 'video', src: femaleCutsVideoUrl },
   'FEMALE::HAIR STYLING::Styling': { type: 'video', src: femaleStylingVideoUrl },
