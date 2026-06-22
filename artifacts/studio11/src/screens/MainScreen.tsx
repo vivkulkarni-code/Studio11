@@ -21,6 +21,14 @@ import cleanUpVideoUrl from '@assets/Clean_Up_1782058365550.mp4';
 import maskVideoUrl from '@assets/Mask_1782058380380.mp4';
 import bodyTreatmentsVideoUrl from '@assets/InShot_20260621_224522079_1782062291405.mp4';
 import hairSpaVideoUrl from '@assets/Hair_Spa_1782062719345.mp4';
+import maleSkinCareImgUrl from '@assets/skin-care_1782099710312.png';
+import maleManiPadiImgUrl from '@assets/Mani-_Padi_1782099710395.png';
+import maleMakeupImgUrl from '@assets/Make-up_1782099710414.png';
+import maleHairStylingImgUrl from '@assets/Hair_Styling_1782099710436.png';
+import maleGroomalImgUrl from '@assets/Groomal_1782099710464.png';
+import maleFacialsImgUrl from '@assets/Facials_1782099710482.png';
+import maleColorsImgUrl from '@assets/Colors_1782099710505.png';
+import maleBodyTreatmentsImgUrl from '@assets/Body_treatments_1782099710530.png';
 
 /* ─── Service name bracket parser ─────────────────────────────────────────── */
 function toSentenceCase(str: string): string {
@@ -307,7 +315,15 @@ const CATEGORY_MEDIA: Partial<Record<string, MediaEntry>> = {
   'FEMALE::BRIDAL':    { type: 'video', src: bridalVideoUrl },
   'FEMALE::FACIALS':   { type: 'video', src: facialsVideoUrl },
   // Male — category level
-  'MALE::FACIALS':     { type: 'video', src: facialsVideoUrl },
+  'MALE::HAIR STYLING':      { type: 'image', src: maleHairStylingImgUrl },
+  'MALE::GROOMAL':           { type: 'image', src: maleGroomalImgUrl },
+  'MALE::SKIN CARE':         { type: 'image', src: maleSkinCareImgUrl },
+  'MALE::FACIALS':           { type: 'image', src: maleFacialsImgUrl },
+  'MALE::MANI PADI':         { type: 'image', src: maleManiPadiImgUrl },
+  'MALE::MAKEUP':            { type: 'image', src: maleMakeupImgUrl },
+  'MALE::BODY TREATMENTS':   { type: 'image', src: maleBodyTreatmentsImgUrl },
+  // Male — sub-category level (HAIR STYLING)
+  'MALE::HAIR STYLING::Colors': { type: 'image', src: maleColorsImgUrl },
   // Female — sub-category level (HAIR STYLING)
   'FEMALE::HAIR STYLING::Cuts':    { type: 'video', src: femaleCutsVideoUrl },
   'FEMALE::HAIR STYLING::Styling': { type: 'video', src: femaleStylingVideoUrl },
