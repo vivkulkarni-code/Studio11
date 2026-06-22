@@ -50,7 +50,7 @@ export interface SessionItem {
 }
 
 interface SessionStore {
-  appScreen: 'intro' | 'focus' | 'main';
+  appScreen: 'intro' | 'focus' | 'main' | 'gallery';
   gender: Gender;
   activeCategory: CategoryName;
   activeSubCategory: string;
@@ -63,7 +63,7 @@ interface SessionStore {
   showDecisionModal: boolean;
   lastAddedService: Service | null;
   userProfile: UserProfile | null;
-  setAppScreen: (screen: 'intro' | 'focus' | 'main') => void;
+  setAppScreen: (screen: 'intro' | 'focus' | 'main' | 'gallery') => void;
   setGender: (gender: Gender) => void;
   setActiveCategory: (cat: CategoryName) => void;
   setActiveSubCategory: (sub: string) => void;

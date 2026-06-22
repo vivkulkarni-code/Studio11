@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, Trash2, X, Plus, Scissors, Camera, ShoppingBag, Star, User, ScanFace, ShoppingCart, Gift, Calendar, ImageIcon } from 'lucide-react';
+import { Check, Trash2, X, Plus, Scissors, Camera, ShoppingBag, Star, User, ScanFace, ShoppingCart, Gift, Calendar, ImageIcon, Images } from 'lucide-react';
 import { useSessionStore, BottomTab, UserProfile } from '@/store/sessionStore';
 import { getServicesByGenderCategoryAndSubCategory, getServicesByGenderAndCategory } from '@/data/services';
 import { categoryTaglines, categoryGradients, MALE_CATEGORIES, FEMALE_CATEGORIES } from '@/data/categories';
@@ -110,7 +110,7 @@ export default function MainScreen() {
 
 /* ─── Header ───────────────────────────────────────────────────────────────── */
 function Header() {
-  const { gender, setGender, itemCount, totalPrice, setSessionDrawerOpen, setProfileDrawerOpen } = useSessionStore();
+  const { gender, setGender, itemCount, totalPrice, setSessionDrawerOpen, setProfileDrawerOpen, setAppScreen } = useSessionStore();
   const { accent, accentGlow } = useAccentColor();
   const count = itemCount();
 
@@ -152,8 +152,19 @@ function Header() {
         ))}
       </div>
 
-      {/* Right icons: profile + cart */}
+      {/* Right icons: our work + profile + cart */}
       <div className="flex items-center gap-2 shrink-0">
+        {/* Our Work icon */}
+        <button
+          data-testid="button-gallery"
+          onClick={() => setAppScreen('gallery')}
+          className="relative w-9 h-9 rounded-full border flex items-center justify-center transition-all glass-l2"
+          style={{ borderColor: 'rgba(255,255,255,0.18)' }}
+          title="Our Work"
+        >
+          <Images size={16} style={{ color: 'rgba(255,255,255,0.7)' }} />
+        </button>
+
         {/* Profile icon */}
         <button
           data-testid="button-profile"
