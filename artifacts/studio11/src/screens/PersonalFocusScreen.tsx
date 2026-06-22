@@ -196,6 +196,8 @@ export default function PersonalFocusScreen() {
             <div className="flex gap-3">
               {focusOptions.map(f => {
                 const isActive = focus === f;
+                const isMale = f === 'MALE';
+                const activeColor = isMale ? '#C0C0C0' : '#D4AF37';
                 return (
                   <button
                     key={f}
@@ -204,12 +206,12 @@ export default function PersonalFocusScreen() {
                     style={{
                       fontFamily: "'Plus Jakarta Sans', sans-serif",
                       background: isActive
-                        ? 'linear-gradient(135deg, rgba(212,175,55,0.5) 0%, rgba(212,175,55,0.22) 100%)'
+                        ? `linear-gradient(135deg, ${activeColor}50 0%, ${activeColor}22 100%)`
                         : undefined,
-                      color: isActive ? '#D4AF37' : 'rgba(255,255,255,0.55)',
-                      borderColor: isActive ? 'rgba(212,175,55,0.5)' : 'rgba(255,255,255,0.14)',
+                      color: isActive ? activeColor : 'rgba(255,255,255,0.55)',
+                      borderColor: isActive ? `${activeColor}50` : 'rgba(255,255,255,0.14)',
                       boxShadow: isActive
-                        ? '0 6px 22px rgba(212,175,55,0.18), inset 0 2px 0 rgba(255,255,255,0.22), inset 0 -2px 0 rgba(0,0,0,0.15)'
+                        ? `0 6px 22px ${activeColor}18, inset 0 2px 0 rgba(255,255,255,0.22), inset 0 -2px 0 rgba(0,0,0,0.15)`
                         : '0 6px 22px rgba(0,0,0,0.32), inset 0 2px 0 rgba(255,255,255,0.12), inset 0 -2px 0 rgba(0,0,0,0.12)',
                     }}
                   >

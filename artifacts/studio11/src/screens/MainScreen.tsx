@@ -399,16 +399,10 @@ function CinematicArea() {
 
       <div className="absolute inset-0 bg-black/35 z-0" />
 
-      {/* Category title overlay */}
+      {/* Category tagline overlay */}
       <div className="relative z-10 flex flex-col items-center text-center px-4 w-full">
-        <h2
-          className="text-4xl md:text-5xl text-white/10 uppercase tracking-widest select-none pointer-events-none w-full leading-none"
-          style={{ fontFamily: "'Bodoni Moda', serif" }}
-        >
-          {activeCategory}
-        </h2>
         <p
-          className="text-[10px] uppercase tracking-[0.25em] mt-2"
+          className="text-[10px] uppercase tracking-[0.25em]"
           style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", color: `${accent}99` }}
         >
           {tagline}
