@@ -249,7 +249,6 @@ function CategoryTabs({ cats }: { cats: string[] }) {
                   : '0 12px 40px rgba(0,0,0,0.45), inset 0 3px 0 rgba(255,255,255,0.28), inset 0 -3px 0 rgba(0,0,0,0.22), inset 3px 0 0 rgba(255,255,255,0.10), inset -3px 0 0 rgba(0,0,0,0.10)',
               }}
             >
-              {isActive && <Sparkle color={accent} count={5} />}
               <span className="relative z-10">{cat}</span>
             </button>
           );
@@ -298,7 +297,6 @@ function SubCategoryTabs() {
                   : '0 6px 22px rgba(0,0,0,0.32), inset 0 2px 0 rgba(255,255,255,0.22), inset 0 -2px 0 rgba(0,0,0,0.15), inset 2px 0 0 rgba(255,255,255,0.06), inset -2px 0 0 rgba(0,0,0,0.06)',
               }}
             >
-              {isActive && <Sparkle color={accent} count={4} />}
               <span className="relative z-10">{sub}</span>
             </button>
           );
@@ -1365,8 +1363,8 @@ function CategoryStoryIntro() {
             animate={{ scale: 1, opacity: 1, filter: 'blur(0px)' }}
             exit={{ scale: 1.05, opacity: 0, filter: 'blur(10px)' }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="text-5xl md:text-7xl text-white uppercase tracking-[0.3em] mb-4 text-center"
-            style={{ fontFamily: "'Bodoni Moda', serif", marginLeft: '0.3em' }}
+            className="text-3xl md:text-4xl text-white uppercase tracking-[0.15em] mb-4 text-center w-full px-6"
+            style={{ fontFamily: "'Bodoni Moda', serif" }}
           >
             {activeCategory}
           </motion.h2>
