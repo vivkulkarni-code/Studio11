@@ -1,0 +1,27 @@
+kind = "mobile"
+previewPath = "/studio11-tablet/"
+title = "Studio11 Tablet App"
+version = "1.0.0"
+id = "artifacts/studio11-tablet"
+router = "expo-domain"
+
+[[integratedSkills]]
+name = "expo"
+version = "1.0.0"
+
+[[services]]
+ensurePreviewReachable = "/status"
+name = "expo"
+paths = [ "/studio11-tablet/" ]
+localPort = 21667
+
+[services.development]
+run = "pnpm --filter @workspace/studio11-tablet run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/studio11-tablet", "run", "build" ]
+run = [ "pnpm", "--filter", "@workspace/studio11-tablet", "run", "serve" ]
+
+[services.env]
+PORT = "21667"
+BASE_PATH = "/studio11-tablet/"

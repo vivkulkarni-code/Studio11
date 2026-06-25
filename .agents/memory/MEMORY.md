@@ -1,0 +1,3 @@
+- [expo-file-system v56 API](expo-fs-v56.md) — uses Directory/File/Paths classes, NOT legacy FileSystem.documentDirectory
+- [expo-video v56 API](expo-video-v56.md) — useVideoPlayer hook + VideoView; source must be typed as `number` (asset ID)
+- [Studio11 tablet navigation](studio11-nav.md) — Zustand appScreen state machine, no expo-router between screens
