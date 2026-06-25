@@ -31,8 +31,10 @@ import maleGroomalImgUrl from '@assets/Groomal_1782099710464.png';
 import maleFacialsImgUrl from '@assets/Facials_1782099710482.png';
 import maleColorsImgUrl from '@assets/Colors_1782099710505.png';
 import maleBodyTreatmentsImgUrl from '@assets/Body_treatments_1782099710530.png';
-import maleCutsVideoUrl from '@assets/Male_Cuts_1782244651470.mp4';
-import maleHairSpaVideoUrl from '@assets/male_Hair_treatments_&_Spas_1782244651509.mp4';
+import maleCutsVideoUrl from '@assets/Male_Cuts_1782364361295.mp4';
+import maleHairSpaVideoUrl from '@assets/male_Hair_treatments_&_Spas2_1782364361261.mp4';
+import maleBodyTreatmentsVideoUrl from '@assets/Male_Body_treatments_1782364361317.mp4';
+import maleSkinCareMaskVideoUrl from '@assets/Male_Skin_Care_Mask_1782364361339.mp4';
 import maleFacialsVideoUrl from '@assets/Male_Facials_1782244651523.mp4';
 import maleColorsVideoUrl from '@assets/Male_colors_1782244651541.mp4';
 import maleSkinCareVideoUrl from '@assets/Male_Skin_care_1782244651567.mp4';
@@ -331,12 +333,12 @@ const CATEGORY_MEDIA: Partial<Record<string, MediaEntry>> = {
   'MALE::GROOMAL':                 { type: 'image', src: maleGroomalImgUrl },
   'MALE::MANI PADI':               { type: 'image', src: maleManiPadiImgUrl },
   'MALE::MAKEUP':                  { type: 'image', src: maleMakeupImgUrl },
-  'MALE::BODY TREATMENTS':         { type: 'image', src: maleBodyTreatmentsImgUrl },
+  'MALE::BODY TREATMENTS':         { type: 'video', src: maleBodyTreatmentsVideoUrl },
   // Male — sub-category level (HAIR STYLING)
   'MALE::HAIR STYLING::Cuts':   { type: 'video', src: maleCutsVideoUrl },
   'MALE::HAIR STYLING::Colors': { type: 'video', src: maleColorsVideoUrl },
   // Male — SKIN CARE sub-category
-  'MALE::SKIN CARE::Mask':      { type: 'image', src: maleMaskImgUrl },
+  'MALE::SKIN CARE::Mask':      { type: 'video', src: maleSkinCareMaskVideoUrl },
   // Female — sub-category level (HAIR STYLING)
   'FEMALE::HAIR STYLING::Cuts':    { type: 'video', src: femaleCutsVideoUrl },
   'FEMALE::HAIR STYLING::Styling': { type: 'video', src: femaleStylingVideoUrl },
