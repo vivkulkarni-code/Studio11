@@ -29,6 +29,7 @@ import {
   getSubCategories,
 } from '../data/services';
 import { getCategoriesForGender } from '../data/categories';
+import type { CategoryName } from '../store/sessionStore';
 import { logoAsset, getVideoForCategory, categoryImages } from '../mediaAssets';
 import colors from '../../constants/colors';
 import { useAccentColor, useAccentDim } from '../hooks/useAccentColor';
@@ -113,7 +114,7 @@ export default function MainScreen() {
             setDrawerService(null);
             Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
             if (Math.random() > 0.5) {
-              const relatedSubs = getSubCategories(gender, svc.category).filter(s => s !== svc.subCategory);
+              const relatedSubs = getSubCategories(gender, svc.category).filter((s: string) => s !== svc.subCategory);
               if (relatedSubs.length) {
                 const fakeSvc = getServicesByGenderCategoryAndSubCategory(gender, svc.category, relatedSubs[0])[0];
                 if (fakeSvc) setTimeout(() => setDecisionModal(true, fakeSvc), 700);
@@ -261,24 +262,24 @@ const headerStyles = StyleSheet.create({
 });
 
 function CategoryBar({ categories, activeCategory, onSelect, accent }: {
-  categories: ReturnType<typeof getCategoriesForGender>;
+  categories: CategoryName[];
   activeCategory: string;
-  onSelect: (cat: any) => void;
+  onSelect: (cat: CategoryName) => void;
   accent: string;
 }) {
   return (
     <View style={catStyles.root}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={catStyles.scroll}>
         {categories.map(cat => {
-          const isActive = cat.name === activeCategory;
+          const isActive = cat === activeCategory;
           return (
             <TouchableOpacity
-              key={cat.name}
-              onPress={() => onSelect(cat.name)}
+              key={cat}
+              onPress={() => onSelect(cat)}
               style={[catStyles.btn, isActive && { borderBottomColor: accent, borderBottomWidth: 2 }]}
               activeOpacity={0.75}
             >
-              <Text style={[catStyles.label, isActive && { color: accent }]}>{cat.shortName}</Text>
+              <Text style={[catStyles.label, isActive && { color: accent }]}>{cat}</Text>
             </TouchableOpacity>
           );
         })}

@@ -8,10 +8,13 @@ export type CategoryName =
   | 'BODY TREATMENTS'
   | 'SKIN CARE'
   | 'FACIALS'
-  | 'NAIL CARE'
-  | 'MAKE UP'
-  | 'BRIDAL & GROMAL'
-  | 'MASSAGES & BODY SPA';
+  | 'MANI PADI'
+  | 'SPAS & MASSAGE'
+  | 'MAKEUP'
+  | 'GROOMAL'
+  | 'BRIDAL';
+
+export type Focus = 'MALE' | 'FEMALE';
 
 export interface ServiceVariant {
   label: string;
@@ -25,6 +28,7 @@ export interface Service {
   price: number;
   duration: number;
   description: string;
+  fullDescription?: string;
   benefits: string[];
   category: CategoryName;
   subCategory: string;
@@ -43,7 +47,7 @@ export interface ClientProfile {
   phone: string;
   birthday: string;
   anniversary: string;
-  focus: Gender;
+  focus: Focus;
 }
 
 interface SessionState {
